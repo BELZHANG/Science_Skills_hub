@@ -1,0 +1,17 @@
+sources:
+  - name: Google DeepMind Science Skills
+    repo: google-deepmind/science-skills
+    scan_roots: [skills]
+    explicit_paths: []
+  - name: K-Dense Scientific Agent Skills
+    repo: K-Dense-AI/scientific-agent-skills
+    scan_roots: [skills]
+    explicit_paths: []
+  - name: ToolUniverse
+    repo: mims-harvard/ToolUniverse
+    scan_roots: [skills]
+    explicit_paths: []
+  - name: Docling
+    repo: docling-project/docling
+    scan_roots: []
+    explicit_paths: [docling/.agents/skills/docling/SKILL.md]

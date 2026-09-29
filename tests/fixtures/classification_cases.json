@@ -1,0 +1,261 @@
+[
+  {
+    "repo": "docling-project/docling",
+    "path": "docling/.agents/skills/docling/SKILL.md",
+    "name": "docling",
+    "description_original": "Use Docling to understand the content of documents in any supported format — PDF (born-digital or scanned), DOCX, PPTX, XLSX, HTML, Markdown, AsciiDoc, CSV, images, audio, and XML — by converting them into a unified DoclingDocument (Markdown or structured JSON). Use this skill whenever you need to read, parse, convert, extract, or chunk a document you cannot read directly: \"what's in this PDF\", \"convert this to markdown\", \"extract the tables\", \"chunk this for RAG\", \"read this scanned document\", \"parse this DOCX/PPTX\". Covers the `docling` CLI, the Python SDK (DocumentConverter + PipelineOptions), the remote Service Client (self-hosted or managed docling-serve), and the docling-slim install extras for a minimal dependency footprint.",
+    "expected": "Read"
+  },
+  {
+    "repo": "google-deepmind/science-skills",
+    "path": "skills/clinvar_database/SKILL.md",
+    "name": "clinvar-database",
+    "description_original": "Use when needing clinical significance, pathogenicity classifications (e.g., Pathogenic, Benign, VUS), clinical evidence rationales, or finding \"hard positive\" benchmark controls for human genomic variants.",
+    "expected": "Search"
+  },
+  {
+    "repo": "google-deepmind/science-skills",
+    "path": "skills/foldseek_structural_search/SKILL.md",
+    "name": "foldseek-structural-search",
+    "description_original": "Performs 3D structural searches of proteins against various databases (PDB, AlphaFold, CATH, MGnify, etc.) using the Foldseek API. Use ONLY when the user provides a physical 3D coordinate file (.cif, .mmcif, or .pdb) and wants to find structurally similar proteins. Do NOT use if the user only provides a protein sequence, gene name, or UniProt ID.",
+    "expected": "Search"
+  },
+  {
+    "repo": "google-deepmind/science-skills",
+    "path": "skills/protein_sequence_msa/SKILL.md",
+    "name": "protein-sequence-msa",
+    "description_original": "Performs multiple sequence alignment of proteins with EBI Clustal Omega. Use when you need to align multiple sequences to assess similarity, domain conservation, or key residue conservation. Supports up to 4000 sequences and a maximum file size of 4 MB. Do not use to search for homologous proteins in a database (use MMseqs2, BLAST), align non-protein sequences (DNA, RNA), perform structural alignment (use Foldseek, PyMOL), or if you only have a single sequence.",
+    "expected": "Experiment"
+  },
+  {
+    "repo": "google-deepmind/science-skills",
+    "path": "skills/uv/SKILL.md",
+    "name": "uv",
+    "description_original": "Checks whether the uv Python package manager is installed and installs it if missing. Ensures uv is on PATH. Use when another skill requires uv as a prerequisite.",
+    "expected": null
+  },
+  {
+    "repo": "k-dense-ai/scientific-agent-skills",
+    "path": "skills/aeon/SKILL.md",
+    "name": "aeon",
+    "description_original": "This skill should be used for time series machine learning tasks including classification, regression, clustering, forecasting, anomaly detection, segmentation, and similarity search. Use when working with temporal data, sequential patterns, or time-indexed observations requiring specialized algorithms beyond standard ML approaches. Particularly suited for univariate and multivariate time series analysis with scikit-learn compatible APIs.",
+    "expected": "Experiment"
+  },
+  {
+    "repo": "k-dense-ai/scientific-agent-skills",
+    "path": "skills/cellxgene-census/SKILL.md",
+    "name": "cellxgene-census",
+    "description_original": "Query the CZ CELLxGENE Census programmatically for versioned public single-cell and spatial transcriptomics data. Use when you need population-scale cell metadata, gene expression slices, Census summary counts, source H5AD URIs/downloads, embeddings, spatial Census data, or reference atlas comparisons across organisms, tissues, diseases, assays, and cell types. For analyzing your own local single-cell data use scanpy, anndata, or scvi-tools.",
+    "expected": "Search"
+  },
+  {
+    "repo": "k-dense-ai/scientific-agent-skills",
+    "path": "skills/database-lookup/SKILL.md",
+    "name": "database-lookup",
+    "description_original": "Query documented public database APIs with explicit endpoints, filters, pagination, and provenance. Use when a scientific, regulatory, financial, or other database-backed fact must be retrieved reproducibly from a named source rather than inferred from general knowledge.",
+    "expected": "Search"
+  },
+  {
+    "repo": "k-dense-ai/scientific-agent-skills",
+    "path": "skills/docx/SKILL.md",
+    "name": "docx",
+    "description_original": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx or .dotx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation.",
+    "expected": "Write"
+  },
+  {
+    "repo": "k-dense-ai/scientific-agent-skills",
+    "path": "skills/literature-review/SKILL.md",
+    "name": "literature-review",
+    "description_original": "Conduct comprehensive, systematic literature reviews using multiple academic databases (PubMed, arXiv, bioRxiv, Semantic Scholar, etc.). This skill should be used when conducting systematic literature reviews, meta-analyses, research synthesis, or comprehensive literature searches across biomedical, scientific, and technical domains. Creates professionally formatted markdown documents and PDFs with verified citations in multiple citation styles (APA, Nature, Vancouver, etc.).",
+    "expected": "Reason"
+  },
+  {
+    "repo": "k-dense-ai/scientific-agent-skills",
+    "path": "skills/pdf/SKILL.md",
+    "name": "pdf",
+    "description_original": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.",
+    "expected": "Read"
+  },
+  {
+    "repo": "k-dense-ai/scientific-agent-skills",
+    "path": "skills/pi-agent/SKILL.md",
+    "name": "pi-agent",
+    "description_original": "Build with and use Pi, the minimal terminal coding harness. Use for installing Pi, configuring providers/models/settings/environment variables, creating Pi skills/extensions/packages/themes/prompt templates, embedding Pi through the SDK, integrating over RPC or JSON event streams, parsing sessions, running local models through the llama.cpp router, developing custom Pi providers and TUI components, or using ecosystem packages such as pi-subagents (delegation/orchestration), pi-mcp-adapter (MCP servers), pi-interview (interactive forms), and pi-web-access (web search, fetching, video understanding).",
+    "expected": null
+  },
+  {
+    "repo": "k-dense-ai/scientific-agent-skills",
+    "path": "skills/pydeseq2/SKILL.md",
+    "name": "pydeseq2",
+    "description_original": "Differential gene expression analysis for bulk RNA-seq with PyDESeq2, including formulaic designs, Wald tests, FDR correction, LFC shrinkage, and result visualization.",
+    "expected": "Experiment"
+  },
+  {
+    "repo": "k-dense-ai/scientific-agent-skills",
+    "path": "skills/pyzotero/SKILL.md",
+    "name": "pyzotero",
+    "description_original": "Interact with Zotero reference management libraries using the pyzotero Python client. Retrieve, create, update, and delete items, collections, tags, and attachments via the Zotero Web API v3. Use this skill when working with Zotero libraries programmatically, managing bibliographic references, exporting citations, searching library contents, uploading PDF attachments, or building research automation workflows that integrate with Zotero.",
+    "expected": "Write"
+  },
+  {
+    "repo": "k-dense-ai/scientific-agent-skills",
+    "path": "skills/scientific-critical-thinking/SKILL.md",
+    "name": "scientific-critical-thinking",
+    "description_original": "Evaluate scientific claims and evidence quality. Use for assessing experimental design validity, identifying biases and confounders, applying evidence grading frameworks (GRADE, Cochrane Risk of Bias), or teaching critical analysis. Best for understanding evidence quality, identifying flaws. For formal peer review writing use peer-review.",
+    "expected": "Reason"
+  },
+  {
+    "repo": "k-dense-ai/scientific-agent-skills",
+    "path": "skills/statistical-power/SKILL.md",
+    "name": "statistical-power",
+    "description_original": "Sample-size and statistical power calculations for planning studies. Use whenever someone asks \"how many subjects/samples/replicates do I need\", wants an a priori power analysis, a minimum detectable effect (MDE), a power curve, or needs to justify a sample size for a grant, IRB protocol, or pre-registration. Covers closed-form power for t-tests, ANOVA, proportions, correlations, chi-square, and regression, plus simulation-based (Monte Carlo) power for designs with no formula — logistic/Poisson regression, mixed models, cluster-randomized trials, survival, and interactions. Use this skill even when the request only mentions an effect size, alpha, or \"80% power\" without saying \"power analysis\" explicitly. For laying out the study (randomization, blocking, factorial/DOE, crossover, sequential designs) use experimental-design; for analyzing data already collected and reporting it use statistical-analysis.",
+    "expected": "Reason"
+  },
+  {
+    "repo": "k-dense-ai/scientific-agent-skills",
+    "path": "skills/xlsx/SKILL.md",
+    "name": "xlsx",
+    "description_original": "Create, edit, analyze, or convert Excel spreadsheets (.xlsx, .xlsm, .xltx) where the workbook file is the primary deliverable. Use for formulas, formatting, financial models, multi-sheet workbooks, and tabular cleanup exported to Excel. Also applies to .csv/.tsv when the user wants spreadsheet output. Do NOT use for Word documents, HTML reports, standalone Python scripts, database pipelines, or Google Sheets API work.",
+    "expected": "Experiment"
+  },
+  {
+    "repo": "mims-harvard/tooluniverse",
+    "path": "skills/setup-boltz-remote-tool/SKILL.md",
+    "name": "setup-boltz-remote-tool",
+    "description_original": "Set up, launch, validate, and troubleshoot the Boltz-2 ToolUniverse remote tool and optionally relay it through ToolUniverse Connect. Use when deploying or auditing this implementation.",
+    "expected": null
+  },
+  {
+    "repo": "mims-harvard/tooluniverse",
+    "path": "skills/tooluniverse-clinical-guidelines/SKILL.md",
+    "name": "tooluniverse-clinical-guidelines",
+    "description_original": "Search and retrieve clinical practice guidelines from 12+ authoritative sources — NICE, WHO, NCCN, AHA, ADA, SIGN, USPSTF, IDSA, NIH consensus, ESMO/ESC/EASL European societies, and US specialty associations. Use for evidence-graded treatment recommendations, dosing protocols, screening guidance, and authoritative-source-prioritized clinical guidance (NICE/WHO ranked above society guidelines).",
+    "expected": "Search"
+  },
+  {
+    "repo": "mims-harvard/tooluniverse",
+    "path": "skills/tooluniverse-diagnostic-test-evaluation/SKILL.md",
+    "name": "tooluniverse-diagnostic-test-evaluation",
+    "description_original": "Diagnostic test / biomarker accuracy — sensitivity, specificity, PPV, NPV, likelihood ratios, accuracy from a 2x2 table; ROC curve, AUC, and the optimal cutoff (Youden) for a continuous biomarker; and post-test probability via Bayes. Use when you have test results vs a gold standard (binary 2x2, or a continuous score + true labels) and need to judge how good the test is, pick a threshold, or compute the probability of disease given a result. Emphasizes the prevalence-dependence of PPV/NPV.",
+    "expected": "Experiment"
+  },
+  {
+    "repo": "mims-harvard/tooluniverse",
+    "path": "skills/tooluniverse-literature-deep-research/SKILL.md",
+    "name": "tooluniverse-literature-deep-research",
+    "description_original": "Deep literature review — PubMed, EuropePMC, bioRxiv preprints, citation networks, evidence synthesis. Disambiguates queries, runs collision-aware searches, grades evidence T1-T4, and produces structured reports. Use for systematic literature review, meta-analysis evidence collection, and detailed answer-with-citations workflows.",
+    "expected": "Reason"
+  },
+  {
+    "repo": "mims-harvard/tooluniverse",
+    "path": "skills/tooluniverse-meta-analysis/SKILL.md",
+    "name": "tooluniverse-meta-analysis",
+    "description_original": "Meta-analysis / evidence synthesis — pool effect sizes across studies (odds ratios, risk ratios, hazard ratios, mean differences, correlations, GWAS betas) with fixed- or random-effects models, quantify heterogeneity (Q, I², τ²), and build a forest plot. Use when you have results from MULTIPLE studies and need a single pooled estimate, or to synthesize evidence from a systematic review / multiple GWAS / replicated experiments. Handles the error-prone effect-size + standard-error preparation (converting OR/HR/CI, two-group means±SD, proportions, and correlations into the (effect, SE) the pooling step needs).",
+    "expected": "Experiment"
+  },
+  {
+    "repo": "mims-harvard/tooluniverse",
+    "path": "skills/tooluniverse-primer-design/SKILL.md",
+    "name": "tooluniverse-primer-design",
+    "description_original": "PCR / qPCR primer and oligo design — design forward/reverse primers for a target region (SantaLucia nearest-neighbor thermodynamics), compute melting temperature (Tm) and annealing temperature (Ta), check GC content, and screen an oligo for hairpins and primer-dimers. Use when you need primers for a sequence, want to QC an existing primer pair, or need the Tm of an oligo. Covers the primer-design rules (Tm matching, GC clamp, 3'-end, length) and the tools' constraint quirks.",
+    "expected": "Experiment"
+  },
+  {
+    "repo": "mims-harvard/tooluniverse",
+    "path": "skills/tooluniverse-protein-structure-retrieval/SKILL.md",
+    "name": "tooluniverse-protein-structure-retrieval",
+    "description_original": "Protein structure retrieval from RCSB PDB, PDBe, and AlphaFold with disambiguation, quality assessment (resolution, R-factor, pLDDT), and metadata. Distinguishes high-quality experimental (X-ray under 2 Angstrom) vs predicted vs medium-quality structures. Use for fetching protein structures, structure-quality comparison, and selecting structures for drug design or modeling.",
+    "expected": "Search"
+  },
+  {
+    "repo": "mims-harvard/tooluniverse",
+    "path": "skills/tooluniverse-variant-interpretation/SKILL.md",
+    "name": "tooluniverse-variant-interpretation",
+    "description_original": "Clinical variant interpretation from raw variant calls to ACMG-classified recommendations with structural impact analysis. Use for VUS classification, pathogenicity assessment with cited criteria, structure-based variant impact (AlphaFold/PDB), non-coding/regulatory variant effect prediction with sequence deep-learning models (AlphaGenome, Enformer, Borzoi, ChromBPNet, Evo 2), and producing clinical-grade variant reports for return of results or molecular tumor boards. Use this whenever a user asks about a variant's significance, an intronic/promoter/enhancer/UTR non-coding variant's functional impact, or needs ACMG classification — even if they don't say \"ACMG\".",
+    "expected": "Reason"
+  },
+  {
+    "repo": "drarunmitra/research-skills",
+    "path": "peer-reviewer/SKILL.md",
+    "name": "peer-reviewer",
+    "description_original": "Reviews a research manuscript as a journal editor and peer reviewer would, for public health, epidemiology, and medical journals. Produces a structured review with an editorial recommendation (desk-reject / major / minor / accept), prioritised major and minor comments tied to specific text, a methods-and-statistics critique against the relevant reporting guideline (STROBE/CONSORT/PRISMA/PRISMA-ScR/TRIPOD/ TRIPOD+AI/RECORD/STARD/QUADAS-2/SPIRIT/GRADE/SAMPL/AGREE II/CARE/ARRIVE/SRQR/COREQ/ CHEERS), a claim-versus-evidence audit, and concrete, actionable fixes. Can also draft a point-by-point response-to-reviewers letter and re-review a revision against prior comments. Use when asked to \"review this paper\", \"what would a reviewer say\", \"editor's perspective\", \"pre-submission review\", \"find weaknesses\", or \"will this get rejected\". Critical but constructive; it surfaces real flaws rather than praising.",
+    "expected": "Reason"
+  },
+  {
+    "repo": "drarunmitra/research-skills",
+    "path": "qual-researcher/SKILL.md",
+    "name": "qual-researcher",
+    "description_original": "AI-assisted qualitative research skill for public health and medical research.\nSupports the full qualitative research workflow: transcript cleaning, coding,\nthematic analysis (Braun & Clarke), framework mapping, and synthesis. Designed\nfor interview and FGD transcripts. Maintains methodological rigour by tracing\nevery theme to verbatim quotes, preserving participant voice, flagging\nAI-generated inferences, and documenting the analytical audit trail.",
+    "expected": "Experiment"
+  },
+  {
+    "repo": "drarunmitra/research-skills",
+    "path": "reproducible-repo/SKILL.md",
+    "name": "reproducible-repo",
+    "description_original": "Use when packaging a finished analysis (code + data + manuscript) into a public, citable, reproducible repository and archiving it for a DOI, e.g. \"set up a repo for this paper\", \"make this reproducible\", \"get a Zenodo DOI\", \"prepare for medRxiv/journal submission\", \"code and data availability\". Covers repos with non-redistributable source data, large spatial/binary files, CITATION.cff, Zenodo, and Quarto manuscript front-matter.",
+    "expected": "Write"
+  },
+  {
+    "repo": "drarunmitra/research-skills",
+    "path": "time-series/SKILL.md",
+    "name": "time-series",
+    "description_original": "Analyse and forecast time series in R using the tidyverts ecosystem\n(tsibble, feasts, fable). Covers the full workflow: indexing and gap-filling,\ndecomposition and feature extraction, exploratory graphics, model fitting\n(ETS, ARIMA, dynamic regression, TSLM, NNETAR, Prophet, VAR, baselines),\ndistributional forecasting, time-series cross-validation, accuracy and\nresidual diagnostics, and hierarchical/grouped reconciliation. Adds a\nstatistical-foundations layer (stationarity, ACF/PACF, spectral analysis,\nstate-space/Kalman, point processes) and a public-health/epidemiology layer\n(surveillance, aberration/outbreak detection, interrupted time series,\ncount-data models, seasonality, nowcasting) plus a healthcare-ML layer\n(irregular sampling, informative missingness, longitudinal survival,\ntreatment effects). Use to explore, model, forecast, evaluate, or write up\nany temporal data, especially epidemiological surveillance and notification\nseries.",
+    "expected": "Experiment"
+  },
+  {
+    "repo": "drarunmitra/research-skills",
+    "path": "zotero-cite/SKILL.md",
+    "name": "zotero-cite",
+    "description_original": "Find/verify a reference, add it to a Zotero collection via the Zotero local\nAPI, export the collection to a BibTeX/BibLaTeX file, and cite it from a\nQuarto/R Markdown/LaTeX document with @citekey. Use when the user wants to\n\"add this paper to Zotero and cite it\", build a paper's bibliography in\nZotero, keep a .bib in sync with a Zotero collection, or set up reproducible\nciting for a manuscript. Pairs with academic-writer's citation-check.",
+    "expected": "Write"
+  },
+  {
+    "repo": "jjfroehlich/agent-skills-for-academic-research",
+    "path": "skills/career-development/SKILL.md",
+    "name": "career-development",
+    "description_original": "Use this skill when a scientist needs stage-specific career help with advisor or lab choice, PhD/postdoc/faculty applications, CVs, resumes, cover letters, recommendation-letter scaffolds, referee evidence packets, interviews, offers, startup negotiation, academia-to-industry transitions, job ad interpretation, networking, or a concrete career-path decision. Trigger when the input is a career artifact, opportunity, role comparison, application package, or personal career constraint. Do not trigger for manuscript, grant, figure, project-strategy, journal-selection, or lab-management tasks unless the main issue is the user's own career decision.",
+    "expected": null
+  },
+  {
+    "repo": "jjfroehlich/agent-skills-for-academic-research",
+    "path": "skills/literature-reading-and-synthesis/SKILL.md",
+    "name": "literature-reading-and-synthesis",
+    "description_original": "Use only when the current deliverable is active reading or synthesis of scientific literature: claim/evidence extraction, figure unpacking, cross-paper comparison, a synthesis matrix, literature tracking, reusable evidence notes, or journal-club readiness. Reassess every turn; do not invoke or retain this skill merely because papers were relevant earlier. Do not use when literature is supporting evidence for computational analysis, pipelines, model architecture, fine-tuning, feature engineering, or implementation strategy, even if the user asks to consult or compare papers. Also exclude a completed review used only to update plans, workflows, scripts, manuscripts, or documentation; dataset/download provenance; literature search alone; simple one-paper summaries; citation formatting; grant writing; peer review; and slide design unless renewed literature examination is the primary work.",
+    "expected": "Read"
+  },
+  {
+    "repo": "jjfroehlich/agent-skills-for-academic-research",
+    "path": "skills/publishing-and-peer-review/SKILL.md",
+    "name": "publishing-and-peer-review",
+    "description_original": "Use when the user is acting as an author, reviewer, or editor-facing correspondent in a scientific publication process and needs help with journal submission packages, cover letters, presubmission or editor inquiries, peer-review reports, reviewer ethics, conflicts, confidentiality, editorial decision interpretation, appeals, transfers, resubmission strategy, or response-to-reviewers letters. Trigger on concrete publication-process decisions or artifacts, not on general manuscript prose editing, figure design, grant review, literature summaries, or journal-ranking curiosity without an active submission/review context.",
+    "expected": "Write"
+  },
+  {
+    "repo": "anthropics/skills",
+    "path": "skills/pdf/SKILL.md",
+    "name": "pdf",
+    "description_original": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.",
+    "expected": "Read"
+  },
+  {
+    "repo": "anthropics/skills",
+    "path": "skills/docx/SKILL.md",
+    "name": "docx",
+    "description_original": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx or .dotx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation.",
+    "expected": "Write"
+  },
+  {
+    "repo": "anthropics/skills",
+    "path": "skills/pptx/SKILL.md",
+    "name": "pptx",
+    "description_original": "Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates (.potx), layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward. If a .pptx or .potx file needs to be opened, created, or touched, use this skill.",
+    "expected": "Write"
+  },
+  {
+    "repo": "anthropics/skills",
+    "path": "skills/xlsx/SKILL.md",
+    "name": "xlsx",
+    "description_original": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path — even casually (like \"the xlsx in my downloads\") — and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved.",
+    "expected": "Experiment"
+  }
+]

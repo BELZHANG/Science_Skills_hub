@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="csrf-token" content="{{ csrf }}">
+<title>{% block title %}Research Skill Hub{% endblock %}</title>
+<link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script>
+</head>
+<body>
+<header class="topbar"><a href="/" class="brand"><span class="brand-mark">S<span>·</span></span> Research Skill Hub <small>科研技能导航</small></a><nav aria-label="主导航"><a href="/" {% if request.url.path == '/' %}aria-current="page"{% endif %}>探索目录</a><a href="/sources" {% if request.url.path == '/sources' %}aria-current="page"{% endif %}>来源设置</a></nav></header>
+<main>{% block content %}{% endblock %}</main>
+<footer>Research Skill Hub <span>本地收藏 · 真实来源 · 持续更新</span><span>仅提供信息导航；精选代表个人选择。</span></footer>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<dialog id="editor"><div class="dialog-head"><h2 id="editor-title">条目详情</h2><button type="button" id="close-editor" class="icon-button" aria-label="关闭详情">×</button></div><div id="editor-content"></div></dialog>
+</body></html>

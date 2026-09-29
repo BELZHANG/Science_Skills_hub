@@ -1,0 +1,897 @@
+# 基于 2026-09-15 本地已采集的名称与介绍核对。
+# items: 仓库内精确路径 → 名称+换行+原始介绍的 SHA256 前20位。
+# 内容变化后此映射失效，回退关键词规则并提示复核。辅助条目保留可见。
+version: 1
+groups:
+- repo: docling-project/docling
+  reason: 以读取、提取和整理文档内容为主；文档格式不决定学科领域。
+  values:
+    primary_category: Read
+    secondary_categories: &id001 []
+    tags: &id002
+    - 文档解析
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    docling/.agents/skills/docling/SKILL.md: 51c514b5176f33b79d12
+- repo: k-dense-ai/scientific-agent-skills
+  reason: 以读取、提取和整理文档内容为主；文档格式不决定学科领域。
+  values:
+    primary_category: Read
+    secondary_categories: *id001
+    tags: *id002
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    skills/liteparse/SKILL.md: 80cb13acd172d4f2bda5
+    skills/markitdown/SKILL.md: ac68071f5b3dc2a0188b
+    skills/open-notebook/SKILL.md: ed24758e7114bf5e943a
+    skills/pdf/SKILL.md: 0e05965815a6e68f2d98
+- repo: anthropics/skills
+  reason: 以读取、提取和整理文档内容为主；文档格式不决定学科领域。
+  values:
+    primary_category: Read
+    secondary_categories: *id001
+    tags: *id002
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    skills/pdf/SKILL.md: 0e05965815a6e68f2d98
+- repo: jjfroehlich/agent-skills-for-academic-research
+  reason: 以论文精读、证据提取和跨论文阅读笔记为主要交付物。
+  values:
+    primary_category: Read
+    secondary_categories:
+    - Reason
+    tags:
+    - 文献阅读
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    skills/literature-reading-and-synthesis/SKILL.md: 1140ff9144babe46a5d8
+- repo: google-deepmind/science-skills
+  reason: 以发现论文、获取文献和查询学术资料为主要任务。
+  values:
+    primary_category: Search
+    secondary_categories: &id003
+    - Read
+    tags: &id004
+    - 文献检索
+    review_needed: false
+    out_of_scope: false
+  items:
+    skills/literature_search_arxiv/SKILL.md: c9c5e3dff539b6b2fd7f
+    skills/literature_search_biorxiv/SKILL.md: dc0d316794975a7df1f5
+    skills/literature_search_europepmc/SKILL.md: 5b4fdc858dc8da1fc5ad
+    skills/literature_search_openalex/SKILL.md: 5d3850c696880332a5c6
+    skills/pubmed_database/SKILL.md: f7c86ae3e9c9825ab1fe
+- repo: k-dense-ai/scientific-agent-skills
+  reason: 以发现论文、获取文献和查询学术资料为主要任务。
+  values:
+    primary_category: Search
+    secondary_categories: *id003
+    tags: *id004
+    review_needed: false
+    out_of_scope: false
+  items:
+    skills/bgpt-paper-search/SKILL.md: 49609a2e0ec177700d12
+    skills/exa-search/SKILL.md: f3592aaa64330c67aede
+    skills/paper-lookup/SKILL.md: 6178d5ada0d01020b9e0
+    skills/paperclip/SKILL.md: e54d8bc01c8d2c7c1cf0
+    skills/paperzilla/SKILL.md: 8f1086de12582b70d42a
+    skills/parallel-web/SKILL.md: 72eaecc6e5456a188f79
+    skills/research-lookup/SKILL.md: 6bdb0228c7a6a29aa632
+- repo: google-deepmind/science-skills
+  reason: 以检索已有数据库、注释、序列、结构或研究数据为主；查询所得数据用于分析不等于执行分析。
+  values:
+    primary_category: Search
+    secondary_categories: &id005 []
+    tags: &id006
+    - 数据库与资料检索
+    review_needed: false
+    out_of_scope: false
+  items:
+    skills/alphagenome_atlas_website_links/SKILL.md: d603e4fde82bdb6cd36f
+    skills/chembl_database/SKILL.md: 71f3f9551cf92e0901c3
+    skills/clinical_trials_database/SKILL.md: 9af0ca2bb936bf726686
+    skills/clinvar_database/SKILL.md: b552907008b95b63db94
+    skills/dbsnp_database/SKILL.md: 323335b903ffbc09dbb1
+    skills/embl_ebi_ols/SKILL.md: 963695aac060c28bfd00
+    skills/encode_ccres_database/SKILL.md: a58701301ae9ea584bd4
+    skills/ensembl_database/SKILL.md: b9bae602dcd010599c28
+    skills/foldseek_structural_search/SKILL.md: 6e68905f385762e9943c
+    skills/gnomad_database/SKILL.md: 96daec9a475a0b648ebb
+    skills/gtex_database/SKILL.md: 8dffe22b817a0e221a06
+    skills/human_protein_atlas_database/SKILL.md: 8b03168e1d3f9b0bfe99
+    skills/interpro_database/SKILL.md: 17b4191c3823782604a9
+    skills/jaspar_database/SKILL.md: 787689eceb2a1d0e7fac
+    skills/ncbi_sequence_fetch/SKILL.md: 2481b2ae5730c88c4533
+    skills/openfda_database/SKILL.md: 9af669879a5c2947d87d
+    skills/opentargets_database/SKILL.md: ec42affa1b9a178c7ef0
+    skills/pdb_database/SKILL.md: e839744586de49d4cd2f
+    skills/protein_sequence_similarity_search/SKILL.md: ad94c339c51b7aef24ff
+    skills/pubchem_database/SKILL.md: 9329bcff92f66562edee
+    skills/quickgo_database/SKILL.md: e6ddae7e49ecf4a6d195
+    skills/ucsc_conservation_and_tfbs/SKILL.md: b6a900007771747d59bd
+    skills/unibind_database/SKILL.md: 631f5e29011f43d78a7b
+    skills/uniprot_database/SKILL.md: 43fe8a2ffad885108c7e
+- repo: k-dense-ai/scientific-agent-skills
+  reason: 以检索已有数据库、注释、序列、结构或研究数据为主；查询所得数据用于分析不等于执行分析。
+  values:
+    primary_category: Search
+    secondary_categories: *id005
+    tags: *id006
+    review_needed: false
+    out_of_scope: false
+  items:
+    skills/alphagenome/SKILL.md: de461ae4a32da66ade36
+    skills/bioservices/SKILL.md: 68444206c7c41908c6e3
+    skills/cellxgene-census/SKILL.md: d82d2432f5cd7bd53516
+    skills/database-lookup/SKILL.md: d6047937afed02c35d0c
+    skills/depmap/SKILL.md: 1692be99bd5322035f14
+    skills/gget/SKILL.md: 1c6335fe082ae9767aac
+    skills/imaging-data-commons/SKILL.md: b04c2747775edd5b6665
+    skills/ncats-arax/SKILL.md: 55be5d4e77e17ff1776f
+    skills/onekgpd/SKILL.md: ff773776ce95e93983da
+    skills/ontology-term-resolution/SKILL.md: 606b9124050148c4752c
+    skills/pathogen-variant-surveillance/SKILL.md: 52bf4693c9b14758d346
+    skills/primekg/SKILL.md: 3feafb4d637918d2165a
+- repo: mims-harvard/tooluniverse
+  reason: 以检索已有数据库、注释、序列、结构或研究数据为主；查询所得数据用于分析不等于执行分析。
+  values:
+    primary_category: Search
+    secondary_categories: *id005
+    tags: *id006
+    review_needed: false
+    out_of_scope: false
+  items:
+    skills/tooluniverse-biomedical-fact-lookup/SKILL.md: 5159c5c058b2ae54afcb
+    skills/tooluniverse-chemical-compound-retrieval/SKILL.md: 2875455632c4902da3f6
+    skills/tooluniverse-chemical-sourcing/SKILL.md: 59d2885849a44ae2e322
+    skills/tooluniverse-clinical-guidelines/SKILL.md: df7811a3a658eff66b9e
+    skills/tooluniverse-dataset-discovery/SKILL.md: 241bb2adb6b248ce3df2
+    skills/tooluniverse-drug-regulatory/SKILL.md: f9b23ab44b3c3c11a826
+    skills/tooluniverse-electron-microscopy/SKILL.md: d94abd8461ac56a7eb93
+    skills/tooluniverse-expression-data-retrieval/SKILL.md: 9a63e50b6d784ef8d2b5
+    skills/tooluniverse-microbial-genome-characterization/SKILL.md: 4a8894c0e311e0c695f0
+    skills/tooluniverse-natural-product-dereplication/SKILL.md: 058974acfe3e64aaaeab
+    skills/tooluniverse-nih-funding-landscape/SKILL.md: 5ca58e4b0ca5546e4b4b
+    skills/tooluniverse-product-safety-surveillance/SKILL.md: e12b49076aab6483a463
+    skills/tooluniverse-protein-structure-retrieval/SKILL.md: 614577796737c70ecbde
+    skills/tooluniverse-proteomics-data-retrieval/SKILL.md: 5359481b7ab498d1fb9e
+    skills/tooluniverse-sequence-retrieval/SKILL.md: 34d54040e99e0e01c430
+- repo: google-deepmind/science-skills
+  reason: 以数据处理、统计计算、组学分析、分子设计或实验结果分析为主要任务。
+  values:
+    primary_category: Experiment
+    secondary_categories: &id007 []
+    tags: &id008
+    - 生物医学数据分析
+    review_needed: false
+    out_of_scope: false
+    domain: 生物医学
+  items:
+    skills/alphafold_database_fetch_and_analyze/SKILL.md: d226014daa866fed1a5d
+    skills/alphagenome_single_variant_analysis/SKILL.md: e2b6c4b87282bc6baeb9
+    skills/alphagenome_variant_impact_score/SKILL.md: 82f63334d1e478c231b5
+    skills/protein_sequence_msa/SKILL.md: efc19ad1c9d00b51de17
+    skills/pymol/SKILL.md: 064dd50659913bf4a5d8
+    skills/reactome_database/SKILL.md: 2aae1d71ce81434d1952
+    skills/string_database/SKILL.md: 17af11009fbe2e557727
+- repo: k-dense-ai/scientific-agent-skills
+  reason: 以数据处理、统计计算、组学分析、分子设计或实验结果分析为主要任务。
+  values:
+    primary_category: Experiment
+    secondary_categories: *id007
+    tags: *id008
+    review_needed: false
+    out_of_scope: false
+    domain: 生物医学
+  items:
+    skills/anndata/SKILL.md: e78eb2f84b83c4233bcb
+    skills/arboreto/SKILL.md: b7aae87ff23494d94ca4
+    skills/biopython/SKILL.md: 82c4dd6e9ff8a0b8598a
+    skills/bulk-rnaseq/SKILL.md: fb86b4288e3048f65a4a
+    skills/cobrapy/SKILL.md: bf3937799149060f9c12
+    skills/deepspot-m/SKILL.md: 4eabd5a88df2e4bcda6b
+    skills/deeptools/SKILL.md: 495a1cfbec75ddb35c2c
+    skills/esm/SKILL.md: f2d9cf6dbd1190ce564e
+    skills/etetoolkit/SKILL.md: 276e167589aa059dc64f
+    skills/geniml/SKILL.md: 7bc6dfebac7bb8a8ff91
+    skills/genomic-coordinates/SKILL.md: 94ace7678724ede0f136
+    skills/genomic-intelligence/SKILL.md: 04b4d6b80eb76bbd54d1
+    skills/glycoengineering/SKILL.md: 445eadfd2461231cdc89
+    skills/gtars/SKILL.md: 7c3d35260d1deb6b5f0e
+    skills/matchms/SKILL.md: 9ca7b568b70f6424ef8b
+    skills/molecular-dynamics/SKILL.md: 6a24e7513cf3f4bd098b
+    skills/neurokit2/SKILL.md: d9594ffc138fb1982ec9
+    skills/neuropixels-analysis/SKILL.md: 7680d2c1bfedeea41d8a
+    skills/openpiv/SKILL.md: d98405399925c2def38d
+    skills/pacsomatic/SKILL.md: f5a354e4e97428653e7f
+    skills/pathml/SKILL.md: 663541d3118b51e4667f
+    skills/pathway-enrichment/SKILL.md: b2ecef9c216b64c57bd9
+    skills/phylogenetics/SKILL.md: cee37477815917f1d971
+    skills/pkpd-modeling/SKILL.md: 0b0753d6a836461aa217
+    skills/polars-bio/SKILL.md: 0e2683eed6b4620c8132
+    skills/pydeseq2/SKILL.md: b809d9c0f289594a7e99
+    skills/pyopenms/SKILL.md: 8b211334920477384868
+    skills/pysam/SKILL.md: 1210d84f28b411fda7a1
+    skills/relsa-severity-assessment/SKILL.md: 50031d3cfb9270471519
+    skills/scanpy/SKILL.md: 31a695dddf3bac33480e
+    skills/scikit-bio/SKILL.md: d1723902cd9a83d9fe81
+    skills/scikit-survival/SKILL.md: 690da03abb926bc0fe73
+    skills/scvelo/SKILL.md: c66e66d4615f705198d4
+    skills/scvi-tools/SKILL.md: b3661787af2ffe5e54b2
+    skills/tiledbvcf/SKILL.md: b7faf077e835dd1ff720
+    skills/waypoint-bio/SKILL.md: db131179f6ff78178fd0
+- repo: mims-harvard/tooluniverse
+  reason: 以数据处理、统计计算、组学分析、分子设计或实验结果分析为主要任务。
+  values:
+    primary_category: Experiment
+    secondary_categories: *id007
+    tags: *id008
+    review_needed: false
+    out_of_scope: false
+    domain: 生物医学
+  items:
+    skills/tooluniverse-admet-prediction/SKILL.md: 238670c620563b336f53
+    skills/tooluniverse-adverse-event-detection/SKILL.md: 2be4867ee860723a8ff1
+    skills/tooluniverse-antibody-engineering/SKILL.md: ca4780e05da93aacf667
+    skills/tooluniverse-binder-discovery/SKILL.md: f72f59f03a52c723fbdb
+    skills/tooluniverse-cancer-classification/SKILL.md: ec4e8fe48b126d921fb7
+    skills/tooluniverse-cancer-genomics-tcga/SKILL.md: 7e05404405c39aafe040
+    skills/tooluniverse-comparative-genomics/SKILL.md: d13e0e8aa4bd8308ef86
+    skills/tooluniverse-crispr-screen-analysis/SKILL.md: 07b3a57af31e9ffa8d0e
+    skills/tooluniverse-data-integration-analysis/SKILL.md: a65eb73405e2581daca3
+    skills/tooluniverse-data-wrangling/SKILL.md: e29ff6cf5037aadbcc12
+    skills/tooluniverse-diagnostic-test-evaluation/SKILL.md: 78f1e4e4e687fc0aab05
+    skills/tooluniverse-dose-response/SKILL.md: fb18aa68c7d80a435bc5
+    skills/tooluniverse-drug-synergy/SKILL.md: 59845fc14f7f306d770d
+    skills/tooluniverse-enzyme-kinetics/SKILL.md: 8b61f7a1dac7bc845bce
+    skills/tooluniverse-epidemiological-analysis/SKILL.md: 6c779dcbe305fa4534ab
+    skills/tooluniverse-epigenomics-chromatin/SKILL.md: 7c5f0bba7ebb2da973a9
+    skills/tooluniverse-epigenomics/SKILL.md: 63fa9de43df1c1e67e79
+    skills/tooluniverse-fastq-qc/SKILL.md: 9ea90e56b7cf8264bff7
+    skills/tooluniverse-functional-genomics-screens/SKILL.md: 06201d264594128548d4
+    skills/tooluniverse-gene-enrichment/SKILL.md: 41f9ea9a484ae930a455
+    skills/tooluniverse-gene-regulatory-networks/SKILL.md: 86509365c0fab4253551
+    skills/tooluniverse-gwas-finemapping/SKILL.md: 3c3f693f71b785b99119
+    skills/tooluniverse-gwas-study-explorer/SKILL.md: 123c0f0d33149444a94d
+    skills/tooluniverse-hla-immunogenomics/SKILL.md: ff41856618d52e077dc9
+    skills/tooluniverse-image-analysis/SKILL.md: 476fd3e57962ed9db686
+    skills/tooluniverse-immune-repertoire-analysis/SKILL.md: 4a136b2fed36d5aaad12
+    skills/tooluniverse-immunology/SKILL.md: 5e806f6b91dc50ca56b3
+    skills/tooluniverse-lipidomics/SKILL.md: 3090b9ef07500e07657c
+    skills/tooluniverse-mendelian-randomization/SKILL.md: 12d233373427ad834601
+    skills/tooluniverse-meta-analysis/SKILL.md: 0e90daaf2139771e0661
+    skills/tooluniverse-metabolomics-analysis/SKILL.md: 9d03fd167f949d91eb34
+    skills/tooluniverse-metabolomics-pathway/SKILL.md: f5b821c194a92696455e
+    skills/tooluniverse-metabolomics/SKILL.md: 724b9b6296129400f8be
+    skills/tooluniverse-metagenomics-analysis/SKILL.md: 0cfb3ad8ee132d3670a4
+    skills/tooluniverse-microbiome-research/SKILL.md: f7a55aee82137fb4eea1
+    skills/tooluniverse-model-organism-genetics/SKILL.md: a3a3393e15ff31aef792
+    skills/tooluniverse-molecular-cloning/SKILL.md: c1b44cc8d0af6a6570a7
+    skills/tooluniverse-multi-omics-integration/SKILL.md: 8a8a3825e559b52dcdf7
+    skills/tooluniverse-network-pharmacology/SKILL.md: f312d6ee5a70bb0b2722
+    skills/tooluniverse-noncoding-rna/SKILL.md: 5cac6117824044efe294
+    skills/tooluniverse-pathway-disease-genetics/SKILL.md: 28eea37c9e2259efd95f
+    skills/tooluniverse-pharmacokinetics/SKILL.md: 24aa8a108fd10a37fe1b
+    skills/tooluniverse-pharmacovigilance/SKILL.md: 9ad4025b863041aa6dc3
+    skills/tooluniverse-phewas/SKILL.md: 55a8c55abcd4180720c1
+    skills/tooluniverse-phylogenetics/SKILL.md: 26dd8bdb66a008ac3fa7
+    skills/tooluniverse-plant-genomics/SKILL.md: aeebc1026d97e7c95678
+    skills/tooluniverse-polygenic-risk-score/SKILL.md: 98ead7fc72311da73eeb
+    skills/tooluniverse-population-genetics-1000genomes/SKILL.md: 152808336546c64d9d48
+    skills/tooluniverse-population-genetics/SKILL.md: 1c72a996b58754ddaf4c
+    skills/tooluniverse-primer-design/SKILL.md: 2361a6646d86b6678ab8
+    skills/tooluniverse-protein-interactions/SKILL.md: c2cc92447b8e8f20f210
+    skills/tooluniverse-protein-modification-analysis/SKILL.md: 856eac5b61db63f71059
+    skills/tooluniverse-protein-sae-variant-interpretation/SKILL.md: 781f291fbb207c7fffef
+    skills/tooluniverse-protein-structural-annotation-pdb/SKILL.md: 61b30700bee8a228d714
+    skills/tooluniverse-protein-structure-prediction/SKILL.md: d138138bd927351f4a20
+    skills/tooluniverse-protein-therapeutic-design/SKILL.md: 57ae0d641213d0cf0353
+    skills/tooluniverse-proteomics-analysis/SKILL.md: 31c6114b3e5802b449ca
+    skills/tooluniverse-regulatory-genomics/SKILL.md: 42ae9f47da4ec155a39b
+    skills/tooluniverse-rnaseq-deseq2/SKILL.md: b00ab7963ee2c82249d4
+    skills/tooluniverse-sequence-analysis/SKILL.md: 6d81ee8b2dfbac3b5ee0
+    skills/tooluniverse-single-cell/SKILL.md: d777d66f8dea944f4153
+    skills/tooluniverse-small-molecule-discovery/SKILL.md: 302f92276de3aa68dde6
+    skills/tooluniverse-spatial-omics-analysis/SKILL.md: f764c8b15f0003c96eb4
+    skills/tooluniverse-spatial-transcriptomics/SKILL.md: 6ce8959f8c9e659249fd
+    skills/tooluniverse-statistical-modeling/SKILL.md: cf637337c0c01df6dafa
+    skills/tooluniverse-systems-biology/SKILL.md: bf37c109d9b1519e86b9
+    skills/tooluniverse-vaccine-design/SKILL.md: 23a7118c42d384154a0e
+    skills/tooluniverse-variant-analysis/SKILL.md: cdf85271992eb8de4159
+    skills/tooluniverse-variant-functional-annotation/SKILL.md: d36248986f63dde66d7a
+    skills/tooluniverse-variant-predictor-dms-validation/SKILL.md: 0409933d9a295e84f208
+- repo: k-dense-ai/scientific-agent-skills
+  reason: 支持实验执行、实验记录、科学数据标准化或可复现分析流程。
+  values:
+    primary_category: Experiment
+    secondary_categories: []
+    tags:
+    - 实验流程与科研数据管理
+    review_needed: false
+    out_of_scope: false
+  items:
+    skills/adaptyv/SKILL.md: 6d56824db27ab1033b22
+    skills/benchling-integration/SKILL.md: 68e135d846192dbb4e9f
+    skills/bids/SKILL.md: 56d1202914e825fb10b1
+    skills/dnanexus-integration/SKILL.md: 51399a7f4075296ca590
+    skills/ginkgo-cloud-lab/SKILL.md: 28a823f9f5138310fa77
+    skills/lab-hardware-cad/SKILL.md: 1f78e6d3bc542254e940
+    skills/labarchive-integration/SKILL.md: 565e17de7df88f11cf48
+    skills/lamindb/SKILL.md: 2ea4455e1399791cfc40
+    skills/latchbio-integration/SKILL.md: 78756813e7e8b33db341
+    skills/nextflow/SKILL.md: 66af63000a9104c42ed5
+    skills/omero-integration/SKILL.md: 73ed52ac39e859e2e3fc
+    skills/opentrons-integration/SKILL.md: 5225f97040df079109c6
+    skills/protocolsio-integration/SKILL.md: 53c63d6b69ff3a13adaa
+    skills/pydicom/SKILL.md: af29a0f3e75566e83aa2
+    skills/pylabrobot/SKILL.md: a7b2e7a9773c02ead89d
+- repo: k-dense-ai/scientific-agent-skills
+  reason: 以科学计算、数值建模、机器学习或数据处理为主要任务。
+  values:
+    primary_category: Experiment
+    secondary_categories: &id009 []
+    tags: &id010
+    - 科学计算与建模
+    review_needed: false
+    out_of_scope: false
+  items:
+    skills/aeon/SKILL.md: b5c582791370394bae33
+    skills/astropy/SKILL.md: 068872a1e495fd7fc4e2
+    skills/cirq/SKILL.md: ca49e5f2218603202669
+    skills/dask/SKILL.md: 366d17175463e4f2f740
+    skills/datamol/SKILL.md: 2b4b4532cb679ffc9952
+    skills/deepchem/SKILL.md: c17ff6070827663bbf80
+    skills/diffdock/SKILL.md: 16d22f2c6ed7e8e3037f
+    skills/exploratory-data-analysis/SKILL.md: d770aca4c6a29f97ea6e
+    skills/geomaster/SKILL.md: 249305bbf7a8c977418e
+    skills/geopandas/SKILL.md: 50bcd6a4240e972be33f
+    skills/histolab/SKILL.md: d92a6d92616b1f639c92
+    skills/hugging-science/SKILL.md: abd5a9999e11824aa411
+    skills/matlab/SKILL.md: f617499bde50e4acff31
+    skills/medchem/SKILL.md: 499edeb1d0cd9070d271
+    skills/molfeat/SKILL.md: 7f8ecbb244ee753233b0
+    skills/networkx/SKILL.md: e970f2cc4eeef91abe56
+    skills/optimize-for-gpu/SKILL.md: 62222d99666e792a9502
+    skills/pennylane/SKILL.md: a462fe11eb9a97843b52
+    skills/polars/SKILL.md: 93c419cdec9bbde5039e
+    skills/pufferlib/SKILL.md: 3082bf800714456cd6da
+    skills/pyhealth/SKILL.md: 4a5dbf5c2a064fb25726
+    skills/pymatgen/SKILL.md: c43627cbd7144f66c827
+    skills/pymc/SKILL.md: c8f5b0f73632fc2a8264
+    skills/pymoo/SKILL.md: 1885561c2d3486e731a1
+    skills/pytdc/SKILL.md: 55458eaf64fab433e4ec
+    skills/pytorch-lightning/SKILL.md: eae541e0fdfd793500ce
+    skills/qiskit/SKILL.md: 77fcda94bfaabe642449
+    skills/qutip/SKILL.md: 5ff7e2d4d49c29ac6453
+    skills/rdkit/SKILL.md: cbbb50818c5b6289deee
+    skills/rowan/SKILL.md: c4ae18b8eaffd9a33ad6
+    skills/scikit-learn/SKILL.md: 0321a529b0aea3799e04
+    skills/shap/SKILL.md: 1802ee93db2ec492e13d
+    skills/simpy/SKILL.md: 8556fcffaa9c4ee946ea
+    skills/stable-baselines3/SKILL.md: c22ca30d3e127a2bb571
+    skills/statistical-analysis/SKILL.md: dc8f279c3c03312e9850
+    skills/statsmodels/SKILL.md: 9a57758a547d9ab666c5
+    skills/sympy/SKILL.md: 5fe88270ea457c789952
+    skills/tamarind/SKILL.md: 8942ab7953efce7dce55
+    skills/timesfm-forecasting/SKILL.md: cba58a050bb218d1c1cd
+    skills/torch-geometric/SKILL.md: 0821e784a99551a24e0c
+    skills/torchdrug/SKILL.md: 234429d9c25f9e87b903
+    skills/transformers/SKILL.md: 7c00dfcebd8d647b9c43
+    skills/umap-learn/SKILL.md: 9a7ce45a49fc34065325
+    skills/uncertainty-and-units/SKILL.md: 37a95f90efcd349dee7e
+    skills/vaex/SKILL.md: 7e1cbe99c134ec37564a
+    skills/zarr-python/SKILL.md: cc89ac5812c01fbc7884
+- repo: mims-harvard/tooluniverse
+  reason: 以科学计算、数值建模、机器学习或数据处理为主要任务。
+  values:
+    primary_category: Experiment
+    secondary_categories: *id009
+    tags: *id010
+    review_needed: false
+    out_of_scope: false
+  items:
+    skills/tooluniverse-computational-biophysics/SKILL.md: affacf3395a4cef3e10e
+    skills/tooluniverse-inorganic-physical-chemistry/SKILL.md: 3c7d30890bbe869efd46
+- repo: k-dense-ai/scientific-agent-skills
+  reason: 主要交付科研数据图、图表或科学示意图，辅助成果表达。
+  values:
+    primary_category: Experiment
+    secondary_categories: &id011
+    - Write
+    tags: &id012
+    - 科研绘图
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    skills/matplotlib/SKILL.md: 6bd951b3aa76c40331c7
+    skills/scientific-schematics/SKILL.md: 423a69801f334a19ce3b
+    skills/scientific-visualization/SKILL.md: 7d343d123aa4b7c88754
+    skills/seaborn/SKILL.md: 3afa9780d3d5514b5088
+- repo: jjfroehlich/agent-skills-for-academic-research
+  reason: 主要交付科研数据图、图表或科学示意图，辅助成果表达。
+  values:
+    primary_category: Experiment
+    secondary_categories: *id011
+    tags: *id012
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    skills/data-visualization-and-figures/SKILL.md: 803ca74bf3a57255ec96
+- repo: k-dense-ai/scientific-agent-skills
+  reason: 以电子表格、公式计算和表格数据处理为主，兼有工作簿编辑与输出。
+  values:
+    primary_category: Experiment
+    secondary_categories: &id013
+    - Write
+    tags: &id014
+    - 表格处理与计算
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    skills/xlsx/SKILL.md: fca1d7ed64d6f566dcdd
+- repo: anthropics/skills
+  reason: 以电子表格、公式计算和表格数据处理为主，兼有工作簿编辑与输出。
+  values:
+    primary_category: Experiment
+    secondary_categories: *id013
+    tags: *id014
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    skills/xlsx/SKILL.md: daaeb622b354c5689ae2
+- repo: k-dense-ai/scientific-agent-skills
+  reason: 以整合生物医学证据、解释机制、评估候选方案或研究决策为主；分类不代表临床有效性认证。
+  values:
+    primary_category: Reason
+    secondary_categories: &id015
+    - Search
+    tags: &id016
+    - 生物医学证据与机制推理
+    review_needed: false
+    out_of_scope: false
+    domain: 生物医学
+  items:
+    skills/clinical-decision-support/SKILL.md: cf2256eea9b1ac95c2cc
+    skills/folklore-variant-evidence/SKILL.md: 051803504c0447409f82
+- repo: mims-harvard/tooluniverse
+  reason: 以整合生物医学证据、解释机制、评估候选方案或研究决策为主；分类不代表临床有效性认证。
+  values:
+    primary_category: Reason
+    secondary_categories: *id015
+    tags: *id016
+    review_needed: false
+    out_of_scope: false
+    domain: 生物医学
+  items:
+    skills/tooluniverse-acmg-variant-classification/SKILL.md: 0c20ae345f2579da267f
+    skills/tooluniverse-adverse-outcome-pathway/SKILL.md: 68215810873d64c9fc8d
+    skills/tooluniverse-aging-senescence/SKILL.md: ed5d2e1ed3a135a2ab30
+    skills/tooluniverse-cancer-variant-interpretation/SKILL.md: ed73770af67e711f2454
+    skills/tooluniverse-cell-line-profiling/SKILL.md: c40498a914329baa8c9b
+    skills/tooluniverse-chemical-safety/SKILL.md: fb6f7e1b3c21230e9792
+    skills/tooluniverse-clinical-data-integration/SKILL.md: 27ca9284e77c6c11adcc
+    skills/tooluniverse-clinical-risk-scoring/SKILL.md: b75bcc6564d83b5f07ed
+    skills/tooluniverse-clinical-trial-design/SKILL.md: c2f253759507a66759e0
+    skills/tooluniverse-clinical-trial-matching/SKILL.md: a80520e28a133668de1c
+    skills/tooluniverse-disease-research/SKILL.md: be1a19fa5d60607ccdfc
+    skills/tooluniverse-drug-drug-interaction/SKILL.md: 7584c63ffdfb1740ff1c
+    skills/tooluniverse-drug-mechanism-research/SKILL.md: 146e6f675b3b5fcdaeaf
+    skills/tooluniverse-drug-repurposing/SKILL.md: c825711015be112c2caa
+    skills/tooluniverse-drug-research/SKILL.md: 181a7489318c7ecc682b
+    skills/tooluniverse-drug-target-validation/SKILL.md: 75e71546f9666e939f46
+    skills/tooluniverse-gene-disease-association/SKILL.md: fde3bb1eb6a90be55e5c
+    skills/tooluniverse-gene-liability/SKILL.md: 6d0fbc0a448751c1fc9f
+    skills/tooluniverse-gpcr-structural-pharmacology/SKILL.md: d8f1cb49bfc8d2a0227d
+    skills/tooluniverse-gwas-drug-discovery/SKILL.md: 549f60a8a71983fd1559
+    skills/tooluniverse-gwas-snp-interpretation/SKILL.md: 4cbfca2dc29be60369ae
+    skills/tooluniverse-gwas-trait-to-gene/SKILL.md: f930e34cb063ca3f4e05
+    skills/tooluniverse-immunotherapy-response-prediction/SKILL.md: e823a59b5489b7a2b1c9
+    skills/tooluniverse-infectious-disease/SKILL.md: a8fb81123be07c89f105
+    skills/tooluniverse-kegg-disease-drug/SKILL.md: 314f2e955390dbbaa6ae
+    skills/tooluniverse-multiomic-disease-characterization/SKILL.md: e872f22c5b2166911aeb
+    skills/tooluniverse-neuroscience/SKILL.md: 83d979c662c33cc89fe5
+    skills/tooluniverse-peptide-target-deorphanization/SKILL.md: 881a44e66d4a2521cb5f
+    skills/tooluniverse-pharmacogenomics/SKILL.md: be2a993c0c6e09b0065c
+    skills/tooluniverse-precision-medicine-stratification/SKILL.md: add6c5815333e544104e
+    skills/tooluniverse-precision-oncology/SKILL.md: 328c4f8a1470c7465e11
+    skills/tooluniverse-protein-lof-mechanism/SKILL.md: 197b39a0c669aec72670
+    skills/tooluniverse-rare-disease-diagnosis/SKILL.md: e7ed7e5e9e6ef63b543d
+    skills/tooluniverse-rare-disease-genomics/SKILL.md: e4971e69ca46d491480f
+    skills/tooluniverse-regulatory-variant-analysis/SKILL.md: f082118f56b4874f9d01
+    skills/tooluniverse-residue-functional-mechanism-interpretation/SKILL.md: adaf4a7ba31171544b48
+    skills/tooluniverse-stem-cell-organoid/SKILL.md: 3bf7ad4bcfc05c8523af
+    skills/tooluniverse-structural-proteomics/SKILL.md: 3a8bbca11665a73ae388
+    skills/tooluniverse-structural-variant-analysis/SKILL.md: 96968da163500b0692f0
+    skills/tooluniverse-target-research/SKILL.md: 8cd411c482cd8a36cc68
+    skills/tooluniverse-toxicology/SKILL.md: e7f0779025342d1b1349
+    skills/tooluniverse-variant-interpretation/SKILL.md: f5021c76e10bbc2a31ca
+    skills/tooluniverse-variant-to-mechanism/SKILL.md: e41691e92f23ca852187
+- repo: k-dense-ai/scientific-agent-skills
+  reason: 以研究假设、实验设计、方法有效性或学术证据评议为主要任务。
+  values:
+    primary_category: Reason
+    secondary_categories: &id017 []
+    tags: &id018
+    - 研究设计与评估
+    review_needed: false
+    out_of_scope: false
+  items:
+    skills/analytical-method-validation/SKILL.md: f44a1e175a4153b96434
+    skills/experimental-design/SKILL.md: ecc35a02cccfee21ebf8
+    skills/hypogenic/SKILL.md: 6e66fc47f95e9578bb06
+    skills/hypothesis-generation/SKILL.md: 69f7fb98154a52b4525e
+    skills/iso-standards-readiness/SKILL.md: 7f6a992d5648a8bbed56
+    skills/peer-review/SKILL.md: 7ec817f48aa703c5ec19
+    skills/scholar-evaluation/SKILL.md: 8da3ea4e843d9589b8cf
+    skills/scientific-brainstorming/SKILL.md: d60419325bf0c1bb3eb2
+    skills/scientific-critical-thinking/SKILL.md: c980bf515951d9d317ae
+    skills/statistical-power/SKILL.md: 964ebda7bfc691e08e5d
+- repo: drarunmitra/research-skills
+  reason: 以研究假设、实验设计、方法有效性或学术证据评议为主要任务。
+  values:
+    primary_category: Reason
+    secondary_categories: *id017
+    tags: *id018
+    review_needed: false
+    out_of_scope: false
+  items:
+    peer-reviewer/SKILL.md: 903ee71a7dea6ca15ccb
+- repo: jjfroehlich/agent-skills-for-academic-research
+  reason: 以研究假设、实验设计、方法有效性或学术证据评议为主要任务。
+  values:
+    primary_category: Reason
+    secondary_categories: *id017
+    tags: *id018
+    review_needed: false
+    out_of_scope: false
+  items:
+    skills/research-strategy-and-project-design/SKILL.md: de88ef51701f38de9657
+    skills/scientific-feedback/SKILL.md: e3bbdcbcaf3f299b7ae7
+- repo: k-dense-ai/scientific-agent-skills
+  reason: 以跨研究证据综合和系统性文献综述为核心任务。
+  values:
+    primary_category: Reason
+    secondary_categories: &id019
+    - Search
+    - Read
+    - Write
+    tags: &id020
+    - 文献综述
+    review_needed: false
+    out_of_scope: false
+  items:
+    skills/literature-review/SKILL.md: b9bce831ef8b5b83fc24
+- repo: mims-harvard/tooluniverse
+  reason: 以跨研究证据综合和系统性文献综述为核心任务。
+  values:
+    primary_category: Reason
+    secondary_categories: *id019
+    tags: *id020
+    review_needed: false
+    out_of_scope: false
+  items:
+    skills/tooluniverse-literature-deep-research/SKILL.md: 39fddf8de339c603759b
+- repo: mims-harvard/tooluniverse
+  reason: 基于化学原理推断反应机制、产物及谱学解释。
+  values:
+    primary_category: Reason
+    secondary_categories: []
+    tags:
+    - 化学机制推理
+    review_needed: false
+    out_of_scope: false
+    domain: 化学
+  items:
+    skills/tooluniverse-organic-chemistry/SKILL.md: 9cff166ee0064f125d71
+- repo: k-dense-ai/scientific-agent-skills
+  reason: 以组织参考文献、核对引用和生成文献目录为主。
+  values:
+    primary_category: Write
+    secondary_categories: &id021
+    - Search
+    tags: &id022
+    - 引用管理
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    skills/citation-management/SKILL.md: 8e0cdb5d47e7723588e8
+    skills/pyzotero/SKILL.md: 90f021d1bccce98ba75e
+- repo: drarunmitra/research-skills
+  reason: 以组织参考文献、核对引用和生成文献目录为主。
+  values:
+    primary_category: Write
+    secondary_categories: *id021
+    tags: *id022
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    zotero-cite/SKILL.md: 391706e873c073fc22c6
+- repo: k-dense-ai/scientific-agent-skills
+  reason: 以论文、报告、申请书、演示文稿或科研传播材料为主要交付物。
+  values:
+    primary_category: Write
+    secondary_categories: &id023 []
+    tags: &id024
+    - 科研写作与传播
+    review_needed: false
+    out_of_scope: false
+  items:
+    skills/clinical-reports/SKILL.md: 5fdcebc8e0f1ed817616
+    skills/docx/SKILL.md: cd7630d7931deace1d69
+    skills/latex-posters/SKILL.md: b99e8fda45752f953fff
+    skills/markdown-mermaid-writing/SKILL.md: efafa935a047c10cbfb2
+    skills/pptx-posters/SKILL.md: 86b42d63be2567748eb8
+    skills/pptx/SKILL.md: 9c7ecd332648cf7a754f
+    skills/research-grants/SKILL.md: 45c27b0bd56031095eb4
+    skills/scientific-slides/SKILL.md: 82e5efd2e4573dbaa2d4
+    skills/scientific-writing/SKILL.md: de9ace711ec9d9dc278e
+    skills/treatment-plans/SKILL.md: c5479ba70068ea545bc0
+    skills/venue-templates/SKILL.md: edf7bac0f0111dcd9837
+- repo: drarunmitra/research-skills
+  reason: 以论文、报告、申请书、演示文稿或科研传播材料为主要交付物。
+  values:
+    primary_category: Write
+    secondary_categories: *id023
+    tags: *id024
+    review_needed: false
+    out_of_scope: false
+  items:
+    academic-writer/SKILL.md: fb9f740598213463a849
+    research-writer/SKILL.md: 4961d9a2602a35b60123
+- repo: jjfroehlich/agent-skills-for-academic-research
+  reason: 以论文、报告、申请书、演示文稿或科研传播材料为主要交付物。
+  values:
+    primary_category: Write
+    secondary_categories: *id023
+    tags: *id024
+    review_needed: false
+    out_of_scope: false
+  items:
+    skills/grant-writing/SKILL.md: 2c2bfea2358d64ddbb01
+    skills/scientific-communication/SKILL.md: 1512ecafe9fa9dbd8bc8
+    skills/scientific-writing/SKILL.md: 765a808f534cfa9ac05c
+- repo: anthropics/skills
+  reason: 以论文、报告、申请书、演示文稿或科研传播材料为主要交付物。
+  values:
+    primary_category: Write
+    secondary_categories: *id023
+    tags: *id024
+    review_needed: false
+    out_of_scope: false
+  items:
+    skills/docx/SKILL.md: cd7630d7931deace1d69
+    skills/pptx/SKILL.md: 9c7ecd332648cf7a754f
+- repo: drarunmitra/research-skills
+  reason: 以学术课程及教学演示材料为主要交付物，属于学术传播辅助工具。
+  values:
+    primary_category: Write
+    secondary_categories: []
+    tags:
+    - 学术教学材料
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    academic-course-creator/SKILL.md: 0ae641a02ce30b748462
+    slides-creator-skill/SKILL.md: e94c886eb6cb785b2c26
+- repo: drarunmitra/research-skills
+  reason: 将完成的分析、代码、数据和稿件整理为可引用、可复现的公开研究成果。
+  values:
+    primary_category: Write
+    secondary_categories: []
+    tags:
+    - 研究成果归档
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    reproducible-repo/SKILL.md: e5c96bcc151ff4909bce
+- repo: jjfroehlich/agent-skills-for-academic-research
+  reason: 以投稿、编辑沟通及发表过程中的文稿材料为主，同时支持同行评审。
+  values:
+    primary_category: Write
+    secondary_categories:
+    - Reason
+    tags:
+    - 发表与同行评审
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    skills/publishing-and-peer-review/SKILL.md: 339547870412244f7552
+- repo: drarunmitra/research-skills
+  reason: 进行定性编码与主题分析，或时间序列分析与预测。
+  values:
+    primary_category: Experiment
+    secondary_categories: []
+    tags:
+    - 公共卫生研究方法
+    review_needed: false
+    out_of_scope: false
+    domain: 公共卫生
+  items:
+    qual-researcher/SKILL.md: 4249db8032306a52ae06
+    time-series/SKILL.md: bd1aee4b34d19bfb64e5
+- repo: google-deepmind/science-skills
+  reason: 使用模型进行古代文本修复、归属、年代预测和嵌入分析。
+  values:
+    primary_category: Experiment
+    secondary_categories: []
+    tags:
+    - 数字人文计算
+    review_needed: false
+    out_of_scope: false
+    domain: 数字人文
+  items:
+    skills/predictingthepast/SKILL.md: cdd9749707be8b7d5be9
+- repo: mims-harvard/tooluniverse
+  reason: 以物种、分类、分布和保护状态资料查询为基础的生态研究。
+  values:
+    primary_category: Search
+    secondary_categories:
+    - Reason
+    tags:
+    - 生态资料检索
+    review_needed: false
+    out_of_scope: false
+    domain: 地球与生态
+  items:
+    skills/tooluniverse-ecology-biodiversity/SKILL.md: a603a5d0972ceb24cd0f
+- repo: google-deepmind/science-skills
+  reason: 安装、部署、开发或环境管理辅助工具；不直接对应五个科研任务阶段。
+  values:
+    primary_category: null
+    secondary_categories: &id025 []
+    tags: &id026
+    - 科研基础设施
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    skills/credentials/SKILL.md: 0743ef4d2ea8a58db6fe
+    skills/uv/SKILL.md: 190b85d4d5c1f119c385
+    skills/workflow_skill_creator/SKILL.md: b8d8f7f1f3f892bccc4a
+- repo: k-dense-ai/scientific-agent-skills
+  reason: 安装、部署、开发或环境管理辅助工具；不直接对应五个科研任务阶段。
+  values:
+    primary_category: null
+    secondary_categories: *id025
+    tags: *id026
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    skills/arbor/SKILL.md: f70b85046260259d6b49
+    skills/autoskill/SKILL.md: ce500ddc1ea4f22581f7
+    skills/get-available-resources/SKILL.md: f685436803fd2f8d17fa
+    skills/modal/SKILL.md: 3733179a6e871eef497b
+    skills/pi-agent/SKILL.md: 606a4750596da799fdc2
+- repo: mims-harvard/tooluniverse
+  reason: 安装、部署、开发或环境管理辅助工具；不直接对应五个科研任务阶段。
+  values:
+    primary_category: null
+    secondary_categories: *id025
+    tags: *id026
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    skills/create-tooluniverse-skill/SKILL.md: 4238251fc66766dd9279
+    skills/devtu-auto-discover-apis/SKILL.md: 0a780379a0cc2ac19467
+    skills/devtu-benchmark-harness/SKILL.md: 779f3e0a19a0450c65c1
+    skills/devtu-code-optimization/SKILL.md: fee42914a3dd77bfe1c8
+    skills/devtu-create-tool/SKILL.md: 736888c0b9b09757b639
+    skills/devtu-docs-quality/SKILL.md: 08ec5bdcf51aab4a8235
+    skills/devtu-fix-tool/SKILL.md: d6c7eb4de513998ac914
+    skills/devtu-github/SKILL.md: 984fbb76dc23822a0fa8
+    skills/devtu-optimize-descriptions/SKILL.md: 5a2baeb1b2fb77160758
+    skills/devtu-optimize-skills/SKILL.md: d991bb13fe7835b2b30c
+    skills/devtu-self-evolve/SKILL.md: 40c6b3c3c929983bfe96
+    skills/host-and-share-remote-tool/SKILL.md: 6bb9c71898b3cf15ee4b
+    skills/setup-boltz-remote-tool/SKILL.md: c526e68acbce0134e934
+    skills/setup-borzoi-remote-tool/SKILL.md: 46879f1629b2e5231bff
+    skills/setup-cell2location-remote-tool/SKILL.md: 05de6eb989554fcae5a2
+    skills/setup-cellrank-remote-tool/SKILL.md: d2e9a4574515bb7dcaee
+    skills/setup-celltypist-remote-tool/SKILL.md: c4d8e9d99b0be5a2ea16
+    skills/setup-chrombpnet-remote-tool/SKILL.md: f0af03784ead0ddd0b00
+    skills/setup-depmap-24q2-remote-tool/SKILL.md: 11782378c089eab279af
+    skills/setup-enformer-remote-tool/SKILL.md: c8c41d93fe64b8e6e624
+    skills/setup-esm-remote-tool/SKILL.md: 4e31c5fd447447ce8324
+    skills/setup-expert-feedback-remote-tool/SKILL.md: bb6bf36896e3842dd1ed
+    skills/setup-harmony-remote-tool/SKILL.md: f52d2b1af2286fe13671
+    skills/setup-immune-compass-remote-tool/SKILL.md: 4825d87aef6a73508d29
+    skills/setup-ldsc-remote-tool/SKILL.md: 6a1c31d855c067514547
+    skills/setup-liana-remote-tool/SKILL.md: 97cf92a7db0a9381271a
+    skills/setup-macs3-remote-tool/SKILL.md: 010cc80d5d5d29312529
+    skills/setup-milo-remote-tool/SKILL.md: 38f5e6237da0d51d7c6c
+    skills/setup-mofa-remote-tool/SKILL.md: 5f079bde3ad010ed231b
+    skills/setup-monocle3-remote-tool/SKILL.md: 4e5cf21d94c35741d6bd
+    skills/setup-paga-remote-tool/SKILL.md: ad2c6144b1e7aba14d85
+    skills/setup-pinnacle-remote-tool/SKILL.md: 532a4518c49bf5b1752b
+    skills/setup-scanvi-remote-tool/SKILL.md: eb7e3b138af8bb1ae565
+    skills/setup-scrublet-remote-tool/SKILL.md: 1ce5b893ad62344e55cd
+    skills/setup-scvelo-remote-tool/SKILL.md: e47db58265a3d257a3d0
+    skills/setup-scvi-remote-tool/SKILL.md: e3eba638f8092bf2aaf3
+    skills/setup-singler-remote-tool/SKILL.md: b36895350f94d7b3f4d4
+    skills/setup-slingshot-remote-tool/SKILL.md: e38b899058e1777925ff
+    skills/setup-squidpy-remote-tool/SKILL.md: b831f5e620b64f4e0b2c
+    skills/setup-tangram-remote-tool/SKILL.md: 390154c699e9ee55f678
+    skills/setup-tooluniverse/SKILL.md: ab12e98a15446d4dca5c
+    skills/setup-transcriptformer-remote-tool/SKILL.md: d59134479758c664dd20
+    skills/setup-uspto-downloader-remote-tool/SKILL.md: adb4e005fb48f9798fc5
+    skills/tooluniverse-antigravity-plugin/SKILL.md: 22b8636ef31c12abe989
+    skills/tooluniverse-claude-code-plugin/SKILL.md: bd81973160c839429a99
+    skills/tooluniverse-codex-plugin/SKILL.md: dfa5ef3447739d5a8478
+    skills/tooluniverse-cs-setup/SKILL.md: 445a7431ebcdf37524a0
+    skills/tooluniverse-custom-tool/SKILL.md: 4d0c92510192d379d116
+    skills/tooluniverse-install-skills/SKILL.md: 70e52bfe501385956fb1
+    skills/tooluniverse-sdk/SKILL.md: 1aa6243d7285a7c79f27
+    skills/tooluniverse/SKILL.md: 21dbdcd838ea5393fc58
+- repo: k-dense-ai/scientific-agent-skills
+  reason: 主要用途为通用创作、思维辅助、职业/团队事务或非科研业务；保留可见，暂不强行归入科研阶段。
+  values:
+    primary_category: null
+    secondary_categories: &id027 []
+    tags: &id028
+    - 通用或科研事务辅助
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    skills/consciousness-council/SKILL.md: 19d7c338c1fb715efcf8
+    skills/dhdna-profiler/SKILL.md: 28e037e54061985ad7e4
+    skills/generate-image/SKILL.md: 3bd1596ec416b2b5444c
+    skills/infographics/SKILL.md: 85368ad4cc3c47fadec4
+    skills/market-research-reports/SKILL.md: d96ddb0ef8e63c3374f0
+    skills/usfiscaldata/SKILL.md: 5cefa100e476626684a4
+    skills/what-if-oracle/SKILL.md: 3735fb41a596485e445d
+- repo: mims-harvard/tooluniverse
+  reason: 主要用途为通用创作、思维辅助、职业/团队事务或非科研业务；保留可见，暂不强行归入科研阶段。
+  values:
+    primary_category: null
+    secondary_categories: *id027
+    tags: *id028
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    skills/tooluniverse-self-review/SKILL.md: 795cb0a9a2228a0207b4
+- repo: jjfroehlich/agent-skills-for-academic-research
+  reason: 主要用途为通用创作、思维辅助、职业/团队事务或非科研业务；保留可见，暂不强行归入科研阶段。
+  values:
+    primary_category: null
+    secondary_categories: *id027
+    tags: *id028
+    review_needed: false
+    out_of_scope: false
+    domain: ''
+  items:
+    skills/career-development/SKILL.md: 1a365819608eeb63a079
+    skills/mentoring-management-and-lab-culture/SKILL.md: c0c65b6588544563dd9e
+- repo: k-dense-ai/scientific-agent-skills
+  reason: 管理可复现科学数据、处理流式细胞数据或执行流体数值模拟。
+  values:
+    primary_category: Experiment
+    secondary_categories: []
+    tags:
+    - 科研数据与计算流程
+    review_needed: false
+    out_of_scope: false
+  items:
+    skills/datalad/SKILL.md: f9c92928e66308ad9bf9
+    skills/flowio/SKILL.md: 9756fc82f20717eef9dc
+    skills/fluidsim/SKILL.md: fea171c4d28710c4e535

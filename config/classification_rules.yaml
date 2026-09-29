@@ -1,0 +1,422 @@
+# 按科研任务分类，领域单独标注；名称与首句优先，完整介绍用于补充。
+version: 3
+exact:
+- repo: docling-project/docling
+  path: docling/.agents/skills/docling/SKILL.md
+  values:
+    primary_category: Read
+    secondary_categories: []
+    summary_zh: 将 PDF、Office 文档、图片等资料转换为统一文档结构，支持内容提取、格式转换与分块。
+    tags:
+    - 文档解析
+    - 格式转换
+    domain: ''
+    review_needed: false
+- repo: google-deepmind/science-skills
+  path: skills/literature_search_arxiv/SKILL.md
+  values:
+    primary_category: Search
+    secondary_categories: []
+    summary_zh: 检索 arXiv 论文与预印本，获取元数据、摘要及可用全文入口。
+    tags:
+    - 文献检索
+    - 预印本
+    domain: ''
+    review_needed: false
+- repo: google-deepmind/science-skills
+  path: skills/literature_search_biorxiv/SKILL.md
+  values:
+    primary_category: Search
+    secondary_categories: []
+    summary_zh: 浏览和筛选 bioRxiv、medRxiv 生命科学及医学预印本，支持按 DOI、日期和类别查询。
+    tags:
+    - 文献检索
+    - 预印本
+    domain: 生物医学
+    review_needed: false
+- repo: google-deepmind/science-skills
+  path: skills/literature_search_europepmc/SKILL.md
+  values:
+    primary_category: Search
+    secondary_categories:
+    - Read
+    summary_zh: 检索 Europe PMC 文献，获取开放全文、摘要及参考文献信息。
+    tags:
+    - 文献检索
+    - 开放获取
+    domain: 生物医学
+    review_needed: false
+- repo: google-deepmind/science-skills
+  path: skills/literature_search_openalex/SKILL.md
+  values:
+    primary_category: Search
+    secondary_categories: []
+    summary_zh: 查询 OpenAlex 中的论文、作者、机构和研究主题，支持 DOI 查找与文献计量汇总。
+    tags:
+    - 文献检索
+    - 学术数据库
+    domain: ''
+    review_needed: false
+- repo: google-deepmind/science-skills
+  path: skills/pubmed_database/SKILL.md
+  values:
+    primary_category: Search
+    secondary_categories:
+    - Read
+    summary_zh: 检索 PubMed 生物医学文献，获取摘要与可用全文，并关联基因、蛋白和化合物数据库。
+    tags:
+    - 文献检索
+    - 生物医学
+    domain: 生物医学
+    review_needed: false
+- repo: google-deepmind/science-skills
+  path: skills/chembl_database/SKILL.md
+  values:
+    primary_category: Search
+    secondary_categories: []
+    summary_zh: 查询 ChEMBL 中的活性分子、药物靶点、生物活性数据与化学结构。
+    tags:
+    - 化合物检索
+    - 药物靶点
+    domain: 化学
+    review_needed: false
+- repo: google-deepmind/science-skills
+  path: skills/clinical_trials_database/SKILL.md
+  values:
+    primary_category: Search
+    secondary_categories: []
+    summary_zh: 按疾病、药物、地区、状态或阶段查询 ClinicalTrials.gov，并读取试验详情和入组条件。
+    tags:
+    - 临床试验检索
+    domain: 生物医学
+    review_needed: false
+- repo: google-deepmind/science-skills
+  path: skills/alphafold_database_fetch_and_analyze/SKILL.md
+  values:
+    primary_category: Experiment
+    secondary_categories:
+    - Search
+    summary_zh: 根据 UniProt 编号获取 AlphaFold 预测结构，分析结构置信度、结构域边界及无序区域。
+    tags:
+    - 蛋白结构分析
+    domain: 生物医学
+    review_needed: false
+- repo: google-deepmind/science-skills
+  path: skills/pymol/SKILL.md
+  values:
+    primary_category: Experiment
+    secondary_categories: []
+    summary_zh: 用 PyMOL 展示与分析分子结构，支持结构叠合、距离测量、位点标注和图像渲染。
+    tags:
+    - 分子可视化
+    - 结构分析
+    domain: 生物医学
+    review_needed: false
+- repo: google-deepmind/science-skills
+  path: skills/protein_sequence_msa/SKILL.md
+  values:
+    primary_category: Experiment
+    secondary_categories: []
+    summary_zh: 使用 EBI Clustal Omega 对多条蛋白序列进行比对，分析序列相似性与关键位点保守性。
+    tags:
+    - 多序列比对
+    domain: 生物医学
+    review_needed: false
+- repo: google-deepmind/science-skills
+  path: skills/uv/SKILL.md
+  values:
+    primary_category: null
+    secondary_categories: []
+    out_of_scope: true
+    review_needed: false
+- repo: google-deepmind/science-skills
+  path: skills/credentials/SKILL.md
+  values:
+    primary_category: null
+    secondary_categories: []
+    out_of_scope: true
+    review_needed: false
+- repo: google-deepmind/science-skills
+  path: skills/workflow_skill_creator/SKILL.md
+  values:
+    primary_category: null
+    secondary_categories: []
+    out_of_scope: true
+    review_needed: false
+categories:
+  Search:
+    文献检索:
+    - literature search
+    - paper search
+    - paper lookup
+    - search papers
+    - search literature
+    - search scientific papers
+    - search pubmed
+    - search europe pmc
+    - scholarly APIs
+    - 文献检索
+    - 论文检索
+    数据库与资料检索:
+    - database
+    - database lookup
+    - dataset discovery
+    - data retrieval
+    - sequence retrieval
+    - structure retrieval
+    - query datasets
+    - query the
+    - query and download
+    - ontology term resolution
+    - 数据库查询
+    - 数据集检索
+    序列与结构检索:
+    - structural search
+    - sequence similarity search
+    - find homologues
+  Read:
+    文档解析:
+    - document parsing
+    - document conversion
+    - extract text
+    - extracting text
+    - text extraction
+    - OCR
+    - docling
+    - PDF parsing
+    - convert documents
+    - 文档解析
+    文献阅读:
+    - literature reading
+    - reading papers
+    - read full text
+    - claim evidence extraction
+    - paper summarization
+    - summarize papers
+    - 文献阅读
+    - 文档摘要
+  Reason:
+    证据评估:
+    - critical thinking
+    - critical appraisal
+    - methodological critique
+    - peer review
+    - peer reviewer
+    - scientific feedback
+    - evidence synthesis
+    - evidence grading
+    - clinical interpretation
+    - variant interpretation
+    - pathogenicity assessment
+    - 方法学批判
+    研究设计:
+    - hypothesis generation
+    - generate hypotheses
+    - research design
+    - experimental design
+    - study design
+    - research strategy
+    - project design
+    - scientific brainstorming
+    - clinical trial design
+    - 假设生成
+    - 研究设计
+    文献综述:
+    - literature review
+    - systematic review
+    - research synthesis
+    - 文献综述
+    - 系统综述
+    机制与决策推理:
+    - mechanism research
+    - mechanism interpretation
+    - drug repurposing
+    - target validation
+    - differential diagnosis
+    - clinical decision support
+    - causal inference
+  Experiment:
+    统计与数据分析:
+    - statistical analysis
+    - statistical testing
+    - statistical modeling
+    - statistics
+    - data analysis
+    - data wrangling
+    - data manipulation
+    - time series
+    - forecasting
+    - regression
+    - meta analysis
+    - curve fitting
+    - survival analysis
+    - statistical power
+    - thematic analysis
+    - qualitative research
+    - 统计分析
+    - 定性分析
+    组学与序列分析:
+    - single cell
+    - RNA seq
+    - differential expression
+    - sequence analysis
+    - sequence alignment
+    - genomic interval
+    - variant analysis
+    - variant impact
+    - genomic coordinates
+    - pathway enrichment
+    - gene enrichment
+    - proteomics analysis
+    - metabolomics analysis
+    - metagenomics analysis
+    - phylogenetic
+    - phylogenetics
+    - FASTQ quality control
+    分子与实验计算:
+    - molecular dynamics
+    - molecular docking
+    - molecular modeling
+    - molecular featurization
+    - cheminformatics
+    - protein design
+    - protein experiment
+    - protein structure prediction
+    - primer design
+    - cloning assembly
+    - lab automation
+    - liquid handling
+    - mass spectrometry
+    - pharmacokinetics
+    - enzyme kinetics
+    - dose response
+    科研绘图与影像:
+    - scientific visualization
+    - data visualization
+    - scientific figures
+    - matplotlib
+    - seaborn
+    - plotting
+    - image analysis
+    - computational pathology
+    - tile extraction
+    - microscopy data
+    - 数据可视化
+    科学计算与建模:
+    - scientific computing
+    - simulation
+    - simulations
+    - numerical workflows
+    - machine learning
+    - deep learning
+    - reinforcement learning
+    - quantum computing
+    - quantum circuits
+    - symbolic math
+    - dimensionality reduction
+    - graph neural networks
+    - multi objective optimization
+  Write:
+    科研写作与发表:
+    - scientific writing
+    - academic writing
+    - academic writer
+    - research writer
+    - manuscript preparation
+    - scientific manuscripts
+    - write competitive research proposals
+    - grant writing
+    - research grants
+    - publication process
+    - reproducible repository
+    - 科研写作
+    - 学术写作
+    文档与学术传播:
+    - docx
+    - pptx
+    - slide decks
+    - scientific slides
+    - scientific communication
+    - research posters
+    - academic course
+    - teaching slide
+    - Word documents
+    - clinical reports
+    - treatment plan documentation
+    引用管理:
+    - citation management
+    - reference management
+    - bibliography
+    - bibtex
+    - zotero
+    - 引用管理
+domains:
+  公共卫生:
+  - public health
+  - epidemiology
+  - epidemiological
+  - outbreak
+  - surveillance
+  生物医学:
+  - biomedical
+  - biology
+  - biological
+  - bioinformatics
+  - genomic
+  - genomics
+  - gene
+  - genes
+  - protein
+  - proteins
+  - medical
+  - clinical
+  - RNA seq
+  - single cell
+  - cancer
+  - variant
+  - variants
+  - proteomics
+  - metabolomics
+  - drug
+  - drugs
+  - neuroscience
+  - physiological
+  - immunology
+  - antibody
+  - microbiome
+  化学:
+  - chemistry
+  - chemical
+  - molecule
+  - molecules
+  - molecular
+  - cheminformatics
+  - mass spectrometry
+  物理与材料:
+  - physics
+  - quantum
+  - astronomy
+  - astrophysics
+  - materials
+  - fluid dynamics
+  - fluid simulations
+  地球与生态:
+  - geospatial
+  - ecology
+  - biodiversity
+  - earth observation
+  - remote sensing
+  数据科学:
+  - machine learning
+  - deep learning
+  - data science
+  - statistics
+  - statistical
+  - time series
+  - dataframe
+out_of_scope:
+- social media marketing
+- ecommerce checkout
+- hotel booking
+- cryptocurrency trading
+catalog_file: classification_catalog.yaml

@@ -1,0 +1,238 @@
+{
+  "date": "2026-09-28",
+  "root": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills",
+  "count": 33,
+  "skills": [
+    {
+      "name": "research-lookup",
+      "group": "1. 循证文献调研",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/research-lookup/SKILL.md",
+      "sha256": "fe324fad682ad45cb61797f78f34139bd23fabce0f2db3482ceb1504068ae015",
+      "description": "Independent scholarly lookup through the fixed OpenAlex tool. Search a topic or resolve a DOI/PMID; return paper metadata, abstracts, citations and raw records. Query text is transmitted only to api.openalex.org. Use for standalone literature lookup in the isolated code-agent sandbox."
+    },
+    {
+      "name": "clinical-evidence-decision-pipeline",
+      "group": "1. 循证文献调研",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/clinical-evidence-decision-pipeline/SKILL.md",
+      "sha256": "7bf8b25dc8785754a671f05ce18059501d68c3bc4414bcf1523ef9f79ae16bb3",
+      "description": "Deterministic saved-source workflow that publishes verbatim source evidence cards when routine guidance is insufficient. Use for bounded retrieval, research-topic source selection, source-result display, trial leads, risks, integrity validation, and publication; it does not perform patient matching, diagnosis, treatment recommendation, or eligibility decisions."
+    },
+    {
+      "name": "clinical-literature-retriever",
+      "group": "1. 循证文献调研",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/clinical-literature-retriever/SKILL.md",
+      "sha256": "05dc54f7f603f72ba0a06e1b41666770cf862a1d6e57b110cb9851d69509bed0",
+      "description": "Deterministic clinical literature retrieval and candidate-selection plugin for PubMed, ClinicalTrials.gov, and Europe PMC. Use when the clinical evidence decision pipeline requests retrieval, evidence normalization, deduplication, provenance tracking, or bounded claim-candidate selection."
+    },
+    {
+      "name": "abstract-study-selector",
+      "group": "1. 循证文献调研",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/abstract-study-selector/SKILL.md",
+      "sha256": "cf0788ead5165228506e73a963df8cd4441079b1c97249daa419c571b87334bd",
+      "description": "Select relevant saved abstract records by stable evidence identifier without extracting or summarizing result text. Use only when the clinical evidence decision pipeline requests submit_study_cards from frozen candidates."
+    },
+    {
+      "name": "clinical-evidence-prioritizer",
+      "group": "1. 循证文献调研",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/clinical-evidence-prioritizer/SKILL.md",
+      "sha256": "d337d376fca8d605c62025cdb91b212e9d469ad1a46e84ea8bbb8fb7c4d64d39",
+      "description": "Independently assess saved clinical source quality and topical relevance to a frozen research plan, rank evidence for source-only reminders, and exclude weak, remote, or duplicate sources without matching patient applicability. Use only when the clinical evidence decision pipeline requests submit_evidence_prioritization after study cards are frozen."
+    },
+    {
+      "name": "clinical-reminder-assessor",
+      "group": "1. 循证文献调研",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/clinical-reminder-assessor/SKILL.md",
+      "sha256": "549c0bc82843b6eefb975bfc423bf44c76e5410ae1a2a351507699730a030172",
+      "description": "Add optional non-authoritative reading notes and source-verifiable treatment-name indexes to ranked frozen clinical sources. Use only when the clinical evidence decision pipeline requests submit_clinical_reminders; do not extract final evidence, rewrite results, match evidence to a patient, diagnose, recommend treatment, or decide eligibility."
+    },
+    {
+      "name": "heme-query-planner",
+      "group": "1. 循证文献调研",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/heme-query-planner/SKILL.md",
+      "sha256": "d9a20d32aa118a0c372fa354e4dac8f3a0f4168b10ff9489f129825e574fa50c",
+      "description": "Bounded hematology query-planning plugin. Use only when the clinical evidence decision pipeline requests the bounded_query_planner role for a leukemia, MDS, MPN, CMML, marrow-failure, cytopenia, or related treatment question."
+    },
+    {
+      "name": "heme-treatment-co-scientist",
+      "group": "1. 循证文献调研",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/heme-treatment-co-scientist/SKILL.md",
+      "sha256": "9429fc4e2c89b7dc47fa3eaf8f369f3152b785cc743a437e76208f0ec7de37b7",
+      "description": "Structured leukemia and hematology treatment-evidence entry. Use when a request supplies diagnosis, marrow or flow, cytogenetic, fusion, mutation, or risk fields and needs bounded clinical literature retrieval; routes the case through the clinical evidence decision pipeline with the registered heme profile."
+    },
+    {
+      "name": "pdf-reader",
+      "group": "1. 循证文献调研",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/pdf-reader/SKILL.md",
+      "sha256": "d38d94351ddebf097a4a5baba32d1a4c3483a229f192acc4d66340ffcff08721",
+      "description": "Read, parse, summarize, and answer questions about PDF files or PDF attachments, including reports, manuals, contracts, and papers. Use for 读取PDF、解析PDF、总结文档、概括附件、200字摘要、从PDF提取文字或查找信息, even when the user only says “看看这个附件” and the attachment is a PDF, or native PDF input fails. For full bilingual academic-paper readers with figure/equation anchors use nature-reader; for PDF creation, editing, merging, or form filling use another workflow."
+    },
+    {
+      "name": "nature-reader",
+      "group": "1. 循证文献调研",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/nature-reader/SKILL.md",
+      "sha256": "3f8be34bebe47ad944ac9bf83916e207f4057fe0290718efd1f41676c0e44845",
+      "description": "Build full-paper Chinese-English, figure/table/equation-aware, source-grounded Markdown readers from PDF, DOI, arXiv, publisher HTML, or pasted text. Use for full academic-paper reading, close-reading, or translation; 中英文对照、全文翻译、论文全文精读; with figures, equations, and page/block anchors. Use pdf-reader for ordinary PDF reading, short summaries, factual questions, or standalone text/figure extraction, including papers. Do not reduce a full-reader request to a summary."
+    },
+    {
+      "name": "nature-paper-card",
+      "group": "1. 循证文献调研",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/nature-paper-card/SKILL.md",
+      "sha256": "ad953a1e0f7b8c72fd823a10453086298ea2aef3e7069bd332db432dccafdf50",
+      "description": "Build a source-grounded, 16-section deep-reading Paper Card for one scientific paper from PDF, a nature-reader source map, DOI/arXiv or publisher text, or pasted text. Use for 文献卡片、论文精读卡、单篇论文深度分析、方法模块拆解、实验到结论证据链、结论边界、批判性分析、知识关联或可检验研究思路. Do not use for full bilingual translation, formal peer review, batch monitoring, or presentation output."
+    },
+    {
+      "name": "co-scientist-proposals",
+      "group": "2. 临床选题论证",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/co-scientist-proposals/SKILL.md",
+      "sha256": "47233134acb632146da351c920299a1cde68c5194e807dd30c132d4d10560495",
+      "description": "Agent-team workflow for developing rigorous scientific research proposals with a Co-Scientist-style coalition of specialized agents orchestrated by a Supervisor. Use when Codex, OpenCode, or another coding/research agent needs to generate, critique, rank, cluster, evolve, meta-review, or refine research hypotheses, proposals, experimental plans, grant-style proposals, paper plans, ablation plans, or feasibility assessments using multiple scientific reasoning agents."
+    },
+    {
+      "name": "experimental-design",
+      "group": "3. 研究设计与统计",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/experimental-design/SKILL.md",
+      "sha256": "5b4556615950a0c1f038b72701fb2fc1c864950ab110257361f4d71fe2d3cf71",
+      "description": "Design experiments and studies BEFORE data is collected — choosing a design, randomizing, blocking, and laying out treatment combinations so results are interpretable. Use whenever someone is planning a study, asks how to assign subjects/samples to groups, mentions randomization, blocking, stratification, controls, factorial or fractional-factorial designs, design of experiments (DOE), screening many factors, response-surface optimization, crossover or repeated-measures or split-plot designs, cluster/group randomization, Latin squares, plate layouts, batch/run-order effects, replication vs. pseudoreplication, or sequential/adaptive/group-sequential designs. Trigger even for informal phrasings like \"how should I set up this experiment\", \"how do I avoid confounding\", \"what's the best way to test these 6 factors\", or \"assign these mice to conditions\". For computing the sample size or power once the design is chosen, use statistical-power; for analyzing data already collected, use statistical-analysis."
+    },
+    {
+      "name": "statistical-power",
+      "group": "3. 研究设计与统计",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/statistical-power/SKILL.md",
+      "sha256": "0a459c33f8ad413ac7700d96c4c4d23075753b30c231f52ae06572df304d81e4",
+      "description": "Sample-size and statistical power calculations for planning studies. Use whenever someone asks \"how many subjects/samples/replicates do I need\", wants an a priori power analysis, a minimum detectable effect (MDE), a power curve, or needs to justify a sample size for a grant, IRB protocol, or pre-registration. Covers closed-form power for t-tests, ANOVA, proportions, correlations, chi-square, and regression, plus simulation-based (Monte Carlo) power for designs with no formula — logistic/Poisson regression, mixed models, cluster-randomized trials, survival, and interactions. Use this skill even when the request only mentions an effect size, alpha, or \"80% power\" without saying \"power analysis\" explicitly. For laying out the study (randomization, blocking, factorial/DOE, crossover, sequential designs) use experimental-design; for analyzing data already collected and reporting it use statistical-analysis."
+    },
+    {
+      "name": "statistical-analysis",
+      "group": "5. 医学统计分析",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/statistical-analysis/SKILL.md",
+      "sha256": "b19a86d5ba16c48a208b62b742335c4fbd6cdabb347948cb1bdf8f1beddffbdc",
+      "description": "Guided statistical analysis with test selection and reporting. Use when you need help choosing appropriate tests for your data, assumption checking, power analysis, and APA-formatted results. Best for academic research reporting, test selection guidance. For implementing specific models programmatically use statsmodels."
+    },
+    {
+      "name": "statsmodels",
+      "group": "5. 医学统计分析",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/statsmodels/SKILL.md",
+      "sha256": "aa7c2008775020bac4a9de9e5c2fdf74dc23080f9923da2b8105b1820b1fb91a",
+      "description": "Statistical models library for Python. Use when you need specific model classes (OLS, GLM, mixed models, ARIMA) with detailed diagnostics, residuals, and inference. Best for econometrics, time series, rigorous inference with coefficient tables. For guided statistical test selection with APA reporting use statistical-analysis."
+    },
+    {
+      "name": "scientific-visualization",
+      "group": "5. 医学统计分析",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/scientific-visualization/SKILL.md",
+      "sha256": "f5f50c5c96c15ba7b3b1b64003f009d0717886f27a5e54c7f216c65ab193c2f2",
+      "description": "Create, revise, and export publication-ready scientific figures with accurate data encoding, accessible color palettes, statistical context, multi-panel layouts, and journal-specific sizing. Use for manuscript figures, scientific plots, heatmaps, microscopy charts, figure remediation, and submission-ready PDF, SVG, EPS, TIFF, or PNG exports with Matplotlib, Seaborn, or Plotly."
+    },
+    {
+      "name": "nature-writing",
+      "group": "6. 论文撰写投稿及学术传播",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/nature-writing/SKILL.md",
+      "sha256": "47f6b54c67ebf3ae33b432e173adb15b0c12998f5981112640df543bdb5bcb74",
+      "description": "Draft, restructure, or plan evidence-grounded Nature-style manuscript sections and initial-submission materials from author-provided claims, results, figures, notes, or Chinese drafts. Use for abstracts, introductions, related work, methods, experiments, discussions, conclusions, titles, full manuscript arguments, cover letters, title pages, highlights, author contributions, availability or declaration text, reviewer suggestions, complete first-submission packages, 投稿材料、首次投稿、投稿信、标题页、亮点、作者贡献、数据可用性声明或推荐审稿人. Do not use only to polish finished prose, write post-decision correspondence, create figures, or produce a formal peer-review report."
+    },
+    {
+      "name": "nature-polishing",
+      "group": "6. 论文撰写投稿及学术传播",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/nature-polishing/SKILL.md",
+      "sha256": "d6bf3effd266fe79f71d81a36c079ab443c2f1623f9c6bd55b60f25ada1e949c",
+      "description": "Polish, restructure, translate, or proofread existing academic manuscripts into concise Nature-leaning English, or preserve Chinese in targeted snippet edits, while preserving factual meaning, claim strength, citations, terminology, and evidence boundaries. Use for manuscript paragraphs or full drafts, abstracts, introductions, results, discussions, conclusions, titles, methods, Chinese-to-English academic revision, 论文润色、英文论文润色、语言润色、改写、校对，以及 LaTeX 页面松散、浮动体、断开的标题、多面板图和补充材料排版诊断. Do not use to invent or draft the paper's core scientific argument from scratch, generate reviewer reports or rebuttals, or reanalyse data."
+    },
+    {
+      "name": "nature-reviewer",
+      "group": "6. 论文撰写投稿及学术传播",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/nature-reviewer/SKILL.md",
+      "sha256": "987050cad1c028bb2ab5aef879d2cf6b1664fd841bf3a10e860f843c72d90bda",
+      "description": "Review a supplied scientific manuscript or excerpt from a Nature-style referee perspective, producing evidence-grounded strengths, Major Concerns, Minor Comments, blocking flags, and traceable resolution tests. Use for 帮我 review 文章、模拟审稿、预审、投稿前自审、审稿人视角评估、manuscript critique, novelty/significance assessment, or technical-soundness review. A normal request defaults to one reviewer; use isolated reviewer workers only when the user explicitly requests multiple independent or mutually blind reviews. Do not use for author rebuttals, manuscript rewriting, or editorial decision impersonation."
+    },
+    {
+      "name": "nature-response",
+      "group": "6. 论文撰写投稿及学术传播",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/nature-response/SKILL.md",
+      "sha256": "e7b4e3c91f0289875944d7e2a4ac9f47712a9e684e6ba53703b110b0ff1f840f",
+      "description": "Draft, audit, revise, or package post-decision scientific revision correspondence, including point-by-point reviewer responses, revision cover letters, change trackers, red-marked manuscript excerpts, and LaTeX deliverables. Use for editor decision letters, reviewer comments, response/rebuttal drafts, 修回信、返修邮件、审稿意见回复、逐点回复、大修或小修回复、回复审稿人、修改稿说明、标红修改, or response-package consistency checks. Preserve reviewer visibility boundaries and verify every claimed change. Do not use for initial-submission cover letters, pre-submission peer review, rejection appeals, or inventing experiments and manuscript changes."
+    },
+    {
+      "name": "ppt-master",
+      "group": "6. 论文撰写投稿及学术传播",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/ppt-master/SKILL.md",
+      "sha256": "e3b9774bc1f7ce6c65a4f029f74005b52b66764a0755d4e32be0678f0f1f071d",
+      "description": "AI-driven multi-format SVG content generation system. Converts source documents (PDF/DOCX/URL/Markdown) into high-quality SVG pages and exports to PPTX through multi-role collaboration. Use when user asks to \"create PPT\", \"make presentation\", \"生成PPT\", \"做PPT\", \"制作演示文稿\", or mentions \"ppt-master\".\n"
+    },
+    {
+      "name": "design-to-editable-pptx",
+      "group": "6. 论文撰写投稿及学术传播",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/design-to-editable-pptx/SKILL.md",
+      "sha256": "f29d1749bfe0c1b53d4edb9885c5dfb20dce145a47355f823ec006d123faede6",
+      "description": "Reconstruct slide design images or screenshots (PNG, JPEG, WebP, TIFF) as a native editable PowerPoint deck. Use when the user asks to convert, reproduce, restore, or还原 one or more visual slide references into editable PPT/PPTX objects rather than embedding each reference as a flat full-slide image."
+    },
+    {
+      "name": "search-licensed-images",
+      "group": "6. 论文撰写投稿及学术传播",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/search-licensed-images/SKILL.md",
+      "sha256": "8050c32ba129e596a3e9264440e109d28621ad2e3778cdc3d59c8b236e955924",
+      "description": "Search, rank, download, review, and replace openly licensed or licensed-stock images while recording source, author, license tier, dimensions, and attribution metadata. Use when an agent needs web/open-library imagery for presentations, documents, reports, websites, or other artifacts; when several image queries should run as a batch; or when downloaded media requires a provenance manifest and visible-credit decision."
+    },
+    {
+      "name": "china-grant-research-pipeline",
+      "group": "7. 基金申报与标书",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/china-grant-research-pipeline/SKILL.md",
+      "sha256": "4dfd2fdb94d41c5311080804bbe06d67a6bc0c46bcd89374e44093dc347202a3",
+      "description": "中文项目申报书、项目报告书、课题申报、基金申报、科研项目申请书、通用科研申报书及2026年国家自然科学基金面上、青年C类申报的唯一入口。也用于同一申报书会话里的表单提交、短答、修改、co-scientist 假设论证确认或最终生成。每轮必须调用 proposal_pipeline；agent LLM 只负责路由和搬运明确字段，proposal_pipeline 负责状态读写、假设简报沉淀和申报书生成。"
+    },
+    {
+      "name": "china-proposal-hypothesis-plan-compiler",
+      "group": "7. 基金申报与标书",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/china-proposal-hypothesis-plan-compiler/SKILL.md",
+      "sha256": "ffaafff12a212b97ac160ea248702aa59975c5cbbd417d686b58489934544de3",
+      "description": "Compile a co-scientist hypothesis contract into a structured research plan for Chinese grant proposals. Use before drafting proposal sections when downstream content must derive research tasks, evidence types, models, readouts, milestones, and risks from the selected hypothesis instead of inventing or fixing a task count."
+    },
+    {
+      "name": "china-proposal-literature-evidence",
+      "group": "7. 基金申报与标书",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/china-proposal-literature-evidence/SKILL.md",
+      "sha256": "4292df4ab6308356d77ca91c9660a0f4470c6dee54a4f9535c93907fee806976",
+      "description": "Internal pipeline skill that compiles hypothesis-plan-driven literature evidence for Chinese research grant proposals. It turns a hypothesis plan into search tasks, runs research-lookup, writes a structured literature evidence ledger, and provides references that proposal sections may cite."
+    },
+    {
+      "name": "china-proposal-template-section",
+      "group": "7. 基金申报与标书",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/china-proposal-template-section/SKILL.md",
+      "sha256": "05278fe3b2c9fafe12e512a3d41c28fc6158159e3a3bbf46fadbe9558de46e89",
+      "description": "Internal-only proposal pipeline skill that generates one fixed Chinese grant template section from an explicitly supplied section brief, hypothesis plan, and literature evidence. Use only when china-grant-research-pipeline or its proposal_pipeline workflow explicitly delegates a section-generation step; never use as the direct entry point for a user's general grant or proposal request."
+    },
+    {
+      "name": "nsfc-benzi-audit",
+      "group": "7. 基金申报与标书",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/nsfc-benzi-audit/SKILL.md",
+      "sha256": "8c24fc047e4334f387cd6314e2993582185c6c6951b7a9b4291710d310e14ffc",
+      "description": "Use for applicant-facing diagnosis or re-audit of a Chinese NSFC (国自然) application draft — 本子把脉、本子体检、帮我看国自然本子、申请书修改建议、标书逻辑诊断、青年/面上/地区基金申请书修改、对照已中本子、科学问题凝练、代表作支撑、选题撞题核查 or 申请代码检查. Accepts PDF/DOCX/Markdown/text and checks title, abstract, rationale, key scientific questions, research contents, innovation, feasibility, research basis and cross-section consistency, calibrated to the application year and form. Does not write applications from scratch or provide formal expert-review opinions."
+    },
+    {
+      "name": "scientific-schematics",
+      "group": "7. 基金申报与标书",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/scientific-schematics/SKILL.md",
+      "sha256": "5fdf474c8c757db5710788f4da6c712f9dd35590db45f53cb498ceece5475bff",
+      "description": "Create publication-quality scientific diagrams using Azure/OpenAI image generation with smart iterative refinement. Uses a vision-capable chat model for quality review. Only regenerates if quality is below threshold for your document type. Specialized in neural network architectures, system diagrams, flowcharts, biological pathways, and complex scientific visualizations."
+    },
+    {
+      "name": "amp-search",
+      "group": "其他专用与平台辅助",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/amp-search/SKILL.md",
+      "sha256": "877a73718033f6ec9bb37c20cab9942cf857c2ce50ac153f4e557ec7098766c8",
+      "description": "将查询、搜索、查找、筛选、列出或查看抗菌肽（AMP）数据库的自然语言请求转换为固定 JSON 结构和 MySQL SELECT 语句；也用于识别非 AMP 数据库查询意图。"
+    },
+    {
+      "name": "variant-explain",
+      "group": "其他专用与平台辅助",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/variant-explain/SKILL.md",
+      "sha256": "d7f93676ce6df40cbb4d91b2e67e4700652986fd1c1bc71478d243f8325d5f24",
+      "description": "当同一条用户消息同时出现基因符号、NM_/NR_/ENST 转录本、c.HGVS 和 p.HGVS 时，或用户明确要求把具体体细胞 SNV/小 indel 转成 VariantExplain JSON 时使用。只抽取并规范化 7 字段 JSON；不查询数据库、不解释致癌性，也不用于融合、CNV、结构变异或胚系 ACMG 分类。"
+    },
+    {
+      "name": "di-an-agent-identity",
+      "group": "其他专用与平台辅助",
+      "path": "/Users/chenxizhang/Desktop/gptres/gpt_researcher/sandbox_pool_service/opencode_config/opencode/skills/di-an-agent-identity/SKILL.md",
+      "sha256": "7d79ea63a2b9cc9bde1f470159c8236d0aa1298ff3634fde9df40084c7518d03",
+      "description": "用户询问身份、自我介绍、你是谁、你是干什么的、你的功能、能做什么、属于哪个公司、谁开发的、是什么 agent 时，必须使用本 skill，并固定回答迪安诊断人工智能 Agent 在项目申报、PPT 制作和 AMP 智能检索方面的正式介绍。"
+    }
+  ]
+}

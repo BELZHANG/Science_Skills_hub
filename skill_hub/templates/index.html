@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero"><div><p class="eyebrow">YOUR RESEARCH, ONE PLACE</p><h1>让科研工具，<br class="mobile-break">随手可得。</h1><p class="muted">从检索到写作，把值得留下的 Skill 整理在一起。</p></div><button class="primary" data-refresh="all"><span>↻</span> 刷新全部来源</button></section>
+<section class="sync-strip"><span class="live-dot"></span><span id="sync-status">已收录 {{ sources | sum(attribute='count') }} 项 · {{ sources | length }} 个订阅来源</span><a href="/sources">查看更新状态 ↗</a></section>
+<nav class="stages" aria-label="科研阶段">
+<a href="{{ link(category='', page=1) }}" class="stage {% if not params.get('category') %}active{% endif %}"><b>全部</b><small>探索所有能力</small></a>
+{% for c in categories %}<a href="{{ link(category=c, page=1) }}" class="stage {{ c | lower }} {% if params.get('category') == c %}active{% endif %}"><span class="stage-index">0{{ loop.index }}</span><b>{{ labels[c] }}</b><small>{{ c }}</small></a>{% endfor %}
+<a href="{{ link(category='unclassified', page=1) }}" class="stage {% if params.get('category') == 'unclassified' %}active{% endif %}"><b>待分类</b><small>等待你的发现</small></a>
+</nav>
+<form id="filters" class="filters" method="get" action="/">
+<input type="hidden" name="category" value="{{ params.get('category','') }}">
+<label class="search-field"><span aria-hidden="true">⌕</span><input name="q" value="{{ params.get('q','') }}" placeholder="搜索名称、用途或中文能力标签…" aria-label="搜索 Skill"><button type="submit">搜索</button></label>
+<div class="filter-row"><label>来源<select name="source"><option value="">所有来源</option>{% for s in sources %}<option value="{{ s.id }}" {% if params.get('source') == s.id|string %}selected{% endif %}>{{ s.name }}</option>{% endfor %}</select></label>
+<label>领域<select name="domain"><option value="">所有领域</option>{% for d in domains %}<option {% if params.get('domain') == d %}selected{% endif %}>{{ d }}</option>{% endfor %}</select></label>
+<label class="check"><input type="checkbox" name="favorite" value="1" {% if params.get('favorite') %}checked{% endif %}>仅收藏</label><label class="check"><input type="checkbox" name="featured" value="1" {% if params.get('featured') %}checked{% endif %}>仅精选</label>
+<label class="check"><input type="checkbox" name="show_disabled" value="1" {% if params.get('show_disabled') %}checked{% endif %}>显示停用来源</label>
+<a class="text-link" href="/">重置</a></div>
+<div class="results-heading"><div><h2>{{ labels.get(params.get('category'), '范围外' if params.get('category') == 'out' else '待分类' if params.get('category') == 'unclassified' else '探索目录') }}</h2><span>{{ total }} 项能力</span></div><label>排序<select name="sort">{% for key, label in [('name','名称 A–Z'),('first_seen_at','最近收录'),('changed_at','信息最近变化'),('stars','所属仓库 Stars')] %}<option value="{{ key }}" {% if params.get('sort','name') == key %}selected{% endif %}>{{ label }}</option>{% endfor %}</select></label></div>
+</form>
+<div class="card-grid">
+{% for s in items %}<article class="skill-card {{ (s.primary_category or 'unknown') | lower }}"><div class="card-top"><span class="category-label">{{ labels.get(s.primary_category, '待分类') }}{% if s.featured %} · 精选{% endif %}</span><button class="favorite-button {% if s.favorite %}is-favorite{% endif %}" data-favorite="{{ s.id }}" data-value="{{ 'false' if s.favorite else 'true' }}" aria-label="{{ '取消收藏' if s.favorite else '收藏' }} {{ s.name }}" aria-pressed="{{ 'true' if s.favorite else 'false' }}">{{ '★' if s.favorite else '☆' }}</button></div>
+<h3>{{ s.name }}</h3><p class="summary {% if not s.summary_zh %}muted{% endif %}">{{ s.summary_zh or '暂无中文简介' }}</p><p class="original">{{ s.description_original }}</p>
+<div class="tags">{% for c in s.secondary_categories %}<span>辅助：{{ labels.get(c,c) }}</span>{% endfor %}{% if s.domain %}<span>{{ s.domain }}</span>{% endif %}{% for t in s.tags[:3] %}<span>{{ t }}</span>{% endfor %}</div>
+{% if s.missing or s.parse_status != 'success' or s.review_needed %}<p class="notice">{{ '暂未在上游目录找到' if s.missing else '元数据待修复' if s.parse_status != 'success' else '分类待复核' }}</p>{% endif %}
+<div class="card-meta"><span title="{{ s.source_name }}">{{ s.repo.split('/')[0] }}</span><span title="所属仓库指标，不代表此 Skill 使用量">☆ {{ s.stars if s.stars is not none else '未知' }} <span class="muted">/ Forks {{ s.forks if s.forks is not none else '未知' }}</span></span></div>
+<p class="requirements">使用条件：{{ s.requirements_note or '未确认' }}</p><div class="card-actions">{% if s.skill_url | safe_link %}<a href="{{ s.skill_url }}" target="_blank" rel="noopener noreferrer">查看原文 ↗</a>{% endif %}<a href="https://github.com/{{ s.repo }}" target="_blank" rel="noopener noreferrer">项目 ↗</a><button data-edit="{{ s.id }}">详情 / 编辑</button></div>
+</article>{% else %}<section class="empty-state"><div class="empty-icon">⌕</div><h2>{{ '还没有匹配的 Skill' if params else '你的科研目录，从这里开始' }}</h2><p>首次采集在后台进行。你也可以刷新来源，或调整搜索与筛选条件。</p><a href="/sources" class="button">查看来源与采集进度 →</a></section>{% endfor %}
+</div>
+<div class="pagination"><a class="text-link" href="{{ link(category='out',page=1) }}">查看范围外条目</a><div>{% if page > 1 %}<a class="button" href="{{ link(page=page-1) }}">上一页</a>{% endif %}<span>第 {{ page }} / {{ pages }} 页</span>{% if page < pages %}<a class="button" href="{{ link(page=page+1) }}">下一页</a>{% endif %}</div></div>
+{% endblock %}
